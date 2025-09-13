@@ -6,7 +6,7 @@
 	<img src="https://avatars.githubusercontent.com/u/00000000?v=4" width="120" style="border-radius:50%" alt="Marcus Avatar" />
 </p>
 
-<h2 align="center">No one can compete with my drive, vision, and results.</h2>
+<h2 align="center">Driven by a passion for cybersecurity, I deliver results through vision, collaboration, and relentless commitment to excellence.</h2>
 
 ---
 
