@@ -63,24 +63,15 @@ With a background in IT and cybersecurity, I specialize in:
 
 ## 📚 Education & Experience
 
-- B.S. in Information Technology, Cybersecurity Focus
-- 3+ years in IT Security roles (SOC Analyst, Security Engineer)
-- Experience with Fortune 500 clients and startups
 
----
 
 ## 📫 Connect With Me
 
 - [LinkedIn](https://www.linkedin.com/in/your-linkedin)
 - Email: marcus.security@email.com
-
----
-
-<p align="center">
 	<img src="https://img.shields.io/badge/Security-Expert-green" />
 	<img src="https://img.shields.io/badge/AWS-Cloud-blue" />
 	<img src="https://img.shields.io/badge/Azure-Cloud-blue" />
-</p>
 
 ---
 
