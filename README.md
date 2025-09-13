@@ -31,8 +31,8 @@ With a background in IT and cybersecurity, I specialize in:
 - Cloud Security (AWS, Azure)
 
 **Certifications:**
-- CompTIA Security+
-- Certified Ethical Hacker (CEH)
+- CompTIA Security+  (in progress)
+- Certified Ethical Hacker (CEH)  (in progress)
 - CISSP (in progress)
 
 ---
@@ -60,8 +60,6 @@ With a background in IT and cybersecurity, I specialize in:
 - 100+ vulnerabilities remediated
 
 ---
-
-## 📚 Education & Experience
 
 
 
