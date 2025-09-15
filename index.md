@@ -50,5 +50,8 @@ feature_row:
 
 		- [LinkedIn](https://www.linkedin.com/in/your-linkedin)
 		- Email: marcus.security@email.com
+## [Resumes](resumes.md)
+
+Check out my resumes in various formats.
 
 
