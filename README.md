@@ -14,8 +14,7 @@
 
 **I don't just protect systems—I empower organizations to thrive in a hostile digital world.**
 
-- Proven track record: Reduced security incidents by 80% at Fortune 500 clients
-- Led teams to win 1st place in national cybersecurity competitions
+- Proven track record: Reduced security incidents by 80% for 175 clients
 - Recognized by peers for innovative threat detection strategies
 - Trusted by executives for clear, actionable security guidance
 
@@ -34,14 +33,6 @@ With a background in IT and cybersecurity, I specialize in:
 - CompTIA Security+  (in progress)
 - Certified Ethical Hacker (CEH)  (in progress)
 - CISSP (in progress)
-
----
-
-## 🏆 Achievements & Recognition
-
-- 🥇 1st Place, National Cyber League Team Competition (2024)
-- 🏅 Employee of the Year, TechByMarcus (2023)
-- ⭐ "Marcus is the most dedicated security professional I've worked with." — CTO, Fortune 500 Client
 
 ---
 
