@@ -1,138 +1,99 @@
-# Marcus Albright | Cybersecurity Professional
+# Marcus Albright
+**IT Professional | Database & Cybersecurity**  
+NMLS # 150346
 
-## 🎯 Transitioning from Regulated Finance to Cybersecurity
-
-I'm a cybersecurity professional leveraging 20+ years of experience in risk assessment, compliance monitoring, and fraud detection to build a career in information security. My unique background in regulated industries—combined with hands-on technical skills—positions me to deliver immediate value in security operations, compliance, and risk management roles.
+[Email](mailto:marcus.albright@gmail.com) • [LinkedIn](https://linkedin.com/in/marcus-albright-69ab2989) • [Phone](tel:7023282272) • [GitHub](https://github.com/techByMarcus)
 
 ---
 
-## 🔐 What I Bring to Cybersecurity
+## Overview
 
-**Risk & Compliance Expertise**
-- Conducted 1,000+ KYC/KYB/EDD investigations with 100% compliance to FinCEN and OFAC requirements
-- Implemented automated risk assessment tools that improved operational efficiency by 35%
-- Monitored transactions for fraud indicators and regulatory violations across high-stakes financial operations
+IT professional with 20+ years in banking and mortgage lending. Currently building expertise in database management, SQL development, and cybersecurity foundations through hands-on training and industry certifications.
 
-**Technical Security Skills**
-- Built a comprehensive **[vulnerability scanning toolkit](https://github.com/techByMarcus/vulnerability-scanner)** featuring 36 specialized security scanners
-- Proficient in SIEM systems, AWS Cloud security, Nessus vulnerability scanning, and network defense
-- Developed data-driven dashboards for real-time risk monitoring and incident detection
-
-**Operational Security**
-- Performed root cause analysis on security gaps and operational incidents
-- Created compliance training programs for cross-functional teams
-- Partnered with technology teams to implement security controls and automation
+Strong background in compliance, fraud detection, and regulatory operations—skills that directly transfer to security and data protection work in financial services.
 
 ---
 
 ## 🛠️ Technical Skills
 
-**Security & Monitoring**
-- SIEM, Nessus, System Monitoring, Incident Management, Privacy & Security Fundamentals
+**Database & SQL**
+- PostgreSQL administration and configuration
+- pgAdmin database management
+- SQL query development (SELECT, INSERT, UPDATE, WHERE, ORDER BY, JOINs)
+- Database schema design and table management
+- Data validation and query optimization
+- Backup and restoration procedures
+- Working with relational databases (DVD Rental, sample datasets)
 
-**Cloud & Infrastructure**
-- AWS Cloud Solutions Architecture, Network Defense Essentials
+**Cybersecurity Foundations**
+- Network security and infrastructure fundamentals
+- Risk assessment and threat identification
+- Compliance frameworks (FinCEN, OFAC, AML, KYC)
+- Security best practices and protocols
+- Authentication and authorization principles
+- Data protection and confidentiality standards
+- CompTIA Security+ aligned coursework
 
-**Risk & Compliance**
-- KYC/KYB/EDD, Operational Risk Assessment, Fraud Detection, Root Cause Analysis, Compliance Frameworks (FinCEN, OFAC)
+**Banking & Compliance Operations**
+- Regulatory compliance and audit requirements
+- Fraud detection and prevention strategies
+- Transaction monitoring and suspicious activity analysis
+- Customer data protection and privacy standards
+- Loan origination and servicing operations
+- High-volume data processing and accuracy
+- Banking infrastructure and systems
 
-**Data Analysis**
-- CRM Analytics (Salesforce, Zendesk), Dashboard Development, KPI Tracking, Reporting Automation
-
-**Development**
-- Python, Bash, PowerShell scripting for security automation and vulnerability assessment
+**Tools & Platforms**
+- PostgreSQL & pgAdmin
+- SQL query tools
+- GitHub
+- Windows & command line environments
+- Microsoft Office suite
 
 ---
 
-## 🎓 Certifications & Training
+## 🎓 Education & Certifications
 
-- **Security+** (CompTIA) - *In Progress*
+- **University of Tennessee - Cybersecurity & Database Program** (2025)
+- **QuickStart Cybersecurity Bootcamp** (2025)
+- **CompTIA Security+** (In Progress - Q2 2026)
 - **Network Defense Essentials (NDE)** - EC-Council
-- **AWS Cloud Solutions Architecture** - Amazon Web Services
-- **Cybersecurity Fundamentals** - University of Tennessee
-- **Risk Management and Credit Principles** - New York Institute of Finance
-- **Technology Support Essentials** - IBM
+- **NMLS License #150346** - Mortgage Licensing Professional
 
 ---
 
-## 💼 Featured Project
+## 💼 Professional Background
 
-### **[Enterprise Security Toolkit](https://github.com/techByMarcus/vulnerability-scanner)**
+**20+ Years in Banking & Mortgage Lending**
 
-A production-ready vulnerability assessment framework featuring **36 specialized security scanners** designed for:
-- Network security & discovery
-- Web application security testing
-- Endpoint & system security
-- Cloud infrastructure assessment
-- Compliance & data protection auditing
+Led operations across loan origination, underwriting, and servicing. Developed strong expertise in:
+- Regulatory compliance and risk management
+- Fraud prevention and detection
+- Data accuracy and process optimization
+- Cross-functional team collaboration
+- High-pressure, high-stakes environments
 
-**Key Features:**
-- Cross-platform support (Windows, macOS, Linux)
-- Modular architecture for targeted assessments
-- Real-world security operations focus
-- Compliance-focused scanning (SOC 2, PCI-DSS, HIPAA)
+This background provides deep understanding of banking operations, data security requirements, and regulatory constraints—essential knowledge for cybersecurity roles in financial institutions.
 
 ---
 
-## 🎯 Career Focus
+## 📚 Current Learning
 
-I'm actively seeking opportunities in:
-- **Security Operations Center (SOC) Analyst**
-- **Risk & Compliance Analyst**
-- **GRC (Governance, Risk, Compliance) Analyst**
-- **Cybersecurity Analyst**
-- **Security & Compliance Engineer**
+- Expanding SQL skills and preparing for SQL Server certification
+- Deepening cybersecurity fundamentals through Security+ study
+- Building hands-on lab projects in database and network security
+- Exploring database design patterns and optimization
 
 ---
 
-## 📊 Professional Background
+## 🎯 Focus Areas
 
-### **Risk & Compliance Operations**
-**20+ years in regulated industries** including mortgage lending and financial services
-
-**Key Achievements:**
-- Improved operational efficiency by 35% through automated risk assessment and case management
-- Reduced processing errors and security incidents through real-time monitoring dashboards
-- Led cross-functional teams to optimize security controls and strengthen organizational security posture
-- Conducted enhanced due diligence (EDD) investigations for high-risk accounts and transactions
-
-### **Why Cybersecurity?**
-
-My career in regulated finance taught me that **security isn't just technology—it's about understanding risk, protecting data, and ensuring compliance**. I've spent years:
-- Detecting fraud patterns and suspicious activity
-- Assessing operational risks and implementing controls
-- Navigating complex regulatory frameworks
-- Building automated systems to improve security and efficiency
-
-Now, I'm applying these skills to information security, where the stakes are just as high and the challenges even more dynamic.
+Cybersecurity and database management with emphasis on banking and financial services infrastructure.
 
 ---
 
-## 🤝 What Sets Me Apart
+## 📫 Connect
 
-**Real-World Risk Assessment Experience**
-- I've evaluated thousands of high-stakes transactions for fraud and compliance risks
-- I understand how to balance security with business operations
-
-**Compliance Fluency**
-- Deep knowledge of regulatory frameworks, audit processes, and policy enforcement
-- Experience translating complex requirements into actionable security controls
-
-**Technical + Business Mindset**
-- I don't just find vulnerabilities—I understand their business impact and prioritize remediation accordingly
-- I communicate security concepts clearly to technical and non-technical stakeholders
-
-**Self-Driven Learner**
-- Built a comprehensive security toolkit while working full-time
-- Pursuing industry certifications and constantly expanding technical skills
-
----
-
-## 📫 Let's Connect
-
-I'm open to opportunities, collaborations, and conversations about cybersecurity, risk management, and security operations.
-
-**Contact:**
 - 📧 Email: marcus.albright@gmail.com
 - 💼 LinkedIn: [linkedin.com/in/marcus-albright-69ab2989](https://linkedin.com/in/marcus-albright-69ab2989)
 - 📱 Phone: 702-328-2272
@@ -140,16 +101,8 @@ I'm open to opportunities, collaborations, and conversations about cybersecurity
 
 ---
 
-## 🌟 Professional Philosophy
-
-> "Security is not just about preventing breaches—it's about building trust, enabling business, and protecting what matters most. My mission is to bridge the gap between risk management and technical security, delivering solutions that are both robust and practical."
-
----
-
 <div align="center">
-
-**⭐ Currently seeking cybersecurity opportunities | Open to relocation | Security+ completion: Q1 2025**
-
-*Building a safer digital world, one vulnerability at a time.*
-
+  <p><strong>Security+ Certification: Q2 2026</strong></p>
 </div>
+
+
