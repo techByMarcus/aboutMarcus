@@ -7,10 +7,8 @@ NMLS # 1503465
 ---
 
 ## Overview
-
-IT professional with 20+ years in banking and mortgage lending. Currently building expertise in database management, SQL development, and cybersecurity foundations through hands-on training and industry certifications.
-
-Strong background in compliance, fraud detection, and regulatory operations—skills that directly transfer to security and data protection work in financial services.
+"Cybersecurity professional with a background in financial services compliance and risk management. Currently focused on security operations, vulnerability management, and threat analysis."
+.
 
 ---
 
