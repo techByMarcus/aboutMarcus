@@ -1,6 +1,6 @@
 # Marcus Albright
 **IT Professional | Database & Cybersecurity**  
-NMLS # 150346
+NMLS # 1503465
 
 [Email](mailto:marcus.albright@gmail.com) • [LinkedIn](https://linkedin.com/in/marcus-albright-69ab2989) • [Phone](tel:7023282272) • [GitHub](https://github.com/techByMarcus)
 
