@@ -1,106 +1,88 @@
-# Marcus Albright
-**IT Professional | Database & Cybersecurity**  
-NMLS # 1503465
+# Marcus Albright  
+Cybersecurity Analyst (SOC / Threat Detection)  
 
-[Email](mailto:marcus.albright@gmail.com) • [LinkedIn](https://linkedin.com/in/marcus-albright-69ab2989) • [Phone](tel:7023282272) • [GitHub](https://github.com/techByMarcus)
-
----
-
-## Overview
-"Cybersecurity professional with a background in financial services compliance and risk management. Currently focused on security operations, vulnerability management, and threat analysis."
-.
+📍 Atlanta, GA | 📧 marcus.albright@gmail.com  
+🔗 LinkedIn: https://linkedin.com/in/marcus-a-69ab2989  
 
 ---
 
-## 🛠️ Technical Skills
+## 🧠 Overview
 
-**Database & SQL**
-- PostgreSQL administration and configuration
-- pgAdmin database management
-- SQL query development (SELECT, INSERT, UPDATE, WHERE, ORDER BY, JOINs)
-- Database schema design and table management
-- Data validation and query optimization
-- Backup and restoration procedures
-- Working with relational databases (DVD Rental, sample datasets)
+Cybersecurity analyst transitioning from a financial services background with 12+ years of experience in data analysis, fraud detection, and compliance.
 
-**Cybersecurity Foundations**
-- Network security and infrastructure fundamentals
-- Risk assessment and threat identification
-- Compliance frameworks (FinCEN, OFAC, AML, KYC)
-- Security best practices and protocols
-- Authentication and authorization principles
-- Data protection and confidentiality standards
-- CompTIA Security+ aligned coursework
+Experienced in identifying anomalies, investigating irregular patterns, and escalating critical issues—skills that directly translate into security monitoring, threat detection, and incident response.
 
-**Banking & Compliance Operations**
-- Regulatory compliance and audit requirements
-- Fraud detection and prevention strategies
-- Transaction monitoring and suspicious activity analysis
-- Customer data protection and privacy standards
-- Loan origination and servicing operations
-- High-volume data processing and accuracy
-- Banking infrastructure and systems
-
-**Tools & Platforms**
-- PostgreSQL & pgAdmin
-- SQL query tools
-- GitHub
-- Windows & command line environments
-- Microsoft Office suite
+Hands-on experience developed through SOC simulations, cybersecurity labs, and capture-the-flag (CTF) challenges.
 
 ---
 
-## 🎓 Education & Certifications
+## 🛡️ Cybersecurity Projects
 
-- **University of Tennessee - Cybersecurity & Database Program** (2025)
-- **QuickStart Cybersecurity Bootcamp** (2025)
-- **CompTIA Security+** (In Progress - Q2 2026)
-- **Network Defense Essentials (NDE)** - EC-Council
-- **NMLS License #150346** - Mortgage Licensing Professional
+### SOC Analyst Simulation (LetsDefend)
+- Investigated 20+ simulated cyber incidents including brute force, phishing, and malware alerts  
+- Triaged SIEM alerts and analyzed logs to identify suspicious activity  
+- Applied MITRE ATT&CK framework to map attacker techniques  
+- Documented findings, escalation steps, and remediation actions  
+
+### Cybersecurity Home Lab
+- Built a lab environment using Windows and Linux virtual machines  
+- Performed network scans using Nmap to identify open ports and services  
+- Analyzed network behavior and documented findings  
+- Configured users and permissions to simulate real-world scenarios  
+
+### Capture The Flag (CTF)
+- Completed 25+ challenges involving network analysis, web exploits, and cryptography  
+- Used Nmap and Wireshark to analyze systems and detect vulnerabilities  
+- Simulated real-world attack scenarios and identified security weaknesses  
+
+---
+
+## 🧰 Tools & Technologies
+
+- SIEM: Splunk (log analysis, alert investigation)  
+- Network Analysis: Wireshark, Nmap  
+- Operating Systems: Windows, Linux  
+- Security Frameworks: MITRE ATT&CK, Cyber Kill Chain  
+- Scripting: Python (learning), Bash (learning)  
 
 ---
 
 ## 💼 Professional Background
 
-**20+ Years in Banking & Mortgage Lending**
+12+ years in financial services, specializing in:
 
-Led operations across loan origination, underwriting, and servicing. Developed strong expertise in:
-- Regulatory compliance and risk management
-- Fraud prevention and detection
-- Data accuracy and process optimization
-- Cross-functional team collaboration
-- High-pressure, high-stakes environments
+- Fraud detection and risk analysis  
+- Regulatory compliance (KYC, AML)  
+- Data validation and anomaly detection  
+- High-volume analysis and decision-making  
 
-This background provides deep understanding of banking operations, data security requirements, and regulatory constraints—essential knowledge for cybersecurity roles in financial institutions.
+This experience translates directly into cybersecurity roles focused on monitoring, investigation, and incident response.
 
 ---
 
-## 📚 Current Learning
+## 🎓 Certifications
 
-- Expanding SQL skills and preparing for SQL Server certification
-- Deepening cybersecurity fundamentals through Security+ study
-- Building hands-on lab projects in database and network security
-- Exploring database design patterns and optimization
+- SOC Analyst Certification (LetsDefend)  
+- MITRE ATT&CK & Cyber Kill Chain (LetsDefend)  
+- Ethical Hacking Essentials (EC-Council)  
+- Network Defense Essentials (EC-Council)  
+- AWS Cloud Technical Essentials  
+- CompTIA Security+ (In Progress)  
 
 ---
 
-## 🎯 Focus Areas
+## 📚 Current Focus
 
-Cybersecurity and database management with emphasis on banking and financial services infrastructure.
+- Security+ certification  
+- Expanding SOC investigation skills  
+- Building hands-on detection and analysis labs  
 
 ---
 
 ## 📫 Connect
 
-- 📧 Email: marcus.albright@gmail.com
-- 💼 LinkedIn: [linkedin.com/in/marcus-albright-69ab2989](https://linkedin.com/in/marcus-albright-69ab2989)
-- 📱 Phone: 702-328-2272
-- 💻 GitHub: [@techByMarcus](https://github.com/techByMarcus)
-
----
-
-<div align="center">
-  <p><strong>Security+ Certification: Q2 2026</strong></p>
-</div>
+📧 marcus.albright@gmail.com  
+🔗 https://linkedin.com/in/marcus-a-69ab2989  
+💻 https://github.com/techByMarcus  
 
 
