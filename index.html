@@ -1,655 +1,869 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcus Albright | Financial Crimes & Cybersecurity Specialist</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Marcus Albright — SOC Analyst | Cybersecurity</title>
+<meta name="description" content="Marcus Albright — Cybersecurity analyst with hands-on SOC investigations, security labs, and 20+ years operational discipline. Targeting SOC Analyst and security operations roles."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+/* ── TOKENS ─────────────────────────────────────────────────────────────── */
+:root {
+  --bg:       #070E19;
+  --bg2:      #0B1525;
+  --bg3:      #0F1E35;
+  --border:   rgba(255,255,255,.07);
+  --border2:  rgba(255,255,255,.12);
+  --blue:     #1B6FEA;
+  --blue2:    #3D8EF5;
+  --teal:     #0AB5A2;
+  --teal2:    #2DD4BF;
+  --green:    #10B981;
+  --gold:     #F0A020;
+  --red:      #EF4444;
+  --white:    #EFF4FA;
+  --g100:     #C8D8E8;
+  --g300:     #7A94AE;
+  --g500:     #3E5468;
+  --g700:     #1E2E3E;
+  --mono:     'JetBrains Mono', monospace;
+  --sans:     'Outfit', sans-serif;
+  --r:        10px;
+  --r2:       16px;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--white);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 2px; }
+a { color: inherit; text-decoration: none; }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #e0e0e0;
-            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #2d3561 100%);
-            min-height: 100vh;
-        }
+/* ── NAV ────────────────────────────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 58px; padding: 0 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(7,14,25,.93);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-id {
+  font-family: var(--mono); font-size: 13px; font-weight: 600;
+  color: var(--white); letter-spacing: -.2px;
+}
+.nav-id .teal { color: var(--teal2); }
+.nav-links { display: flex; gap: 24px; }
+.nav-links a {
+  font-family: var(--mono); font-size: 11.5px; font-weight: 500;
+  color: var(--g300); letter-spacing: .5px; text-transform: uppercase;
+  transition: color .15s;
+}
+.nav-links a:hover { color: var(--teal2); }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+/* ── HERO ───────────────────────────────────────────────────────────────── */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 100px 40px 80px;
+  position: relative; overflow: hidden;
+}
+/* Grid background */
+#hero::before {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, black 30%, transparent 80%);
+}
+/* Glow */
+#hero::after {
+  content: ''; position: absolute; top: -10%; left: 50%;
+  transform: translateX(-50%);
+  width: 700px; height: 500px; border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(27,111,234,.12) 0%, transparent 65%);
+  pointer-events: none; z-index: 0;
+}
+.hero-inner {
+  position: relative; z-index: 1; max-width: 760px; text-align: center;
+}
 
-        /* Hero Section - Power Opening */
-        .hero {
-            text-align: center;
-            padding: 80px 20px 60px;
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: 15px;
-            margin-bottom: 50px;
-            border: 1px solid rgba(0, 217, 255, 0.2);
-            box-shadow: 0 10px 40px rgba(0, 217, 255, 0.1);
-        }
+/* Typing badge */
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  color: var(--teal2); letter-spacing: 1px; text-transform: uppercase;
+  background: rgba(10,181,162,.09);
+  border: 1px solid rgba(45,212,191,.2);
+  border-radius: 100px; padding: 5px 16px;
+  margin-bottom: 28px;
+}
+.live-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--teal2);
+  animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
 
-        .hero h1 {
-            font-size: 3.2em;
-            margin-bottom: 15px;
-            background: linear-gradient(135deg, #00d9ff, #00ff88);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
+/* Name */
+.hero-name {
+  font-size: clamp(46px, 7vw, 78px);
+  font-weight: 800; line-height: 1.0;
+  letter-spacing: -2.5px; color: var(--white);
+  margin-bottom: 4px;
+}
+.hero-name .accent { color: var(--teal2); }
 
-        .hero .title {
-            font-size: 1.6em;
-            color: #00d9ff;
-            margin-bottom: 25px;
-            font-weight: 600;
-        }
+/* Role line */
+.hero-role {
+  font-size: clamp(16px, 2.2vw, 21px);
+  font-weight: 400; color: var(--g100);
+  margin: 20px 0 30px; line-height: 1.4;
+}
+.hero-role strong { color: var(--white); font-weight: 700; }
 
-        .hero .value-prop {
-            font-size: 1.25em;
-            color: #ffffff;
-            max-width: 900px;
-            margin: 30px auto;
-            line-height: 1.8;
-            font-weight: 500;
-        }
+/* Summary */
+.hero-summary {
+  font-size: 16px; font-weight: 300;
+  color: var(--g300); max-width: 580px;
+  margin: 0 auto 36px; line-height: 1.8;
+}
+.hero-summary strong { color: var(--g100); font-weight: 500; }
 
-        .hero .power-statement {
-            font-size: 1.3em;
-            color: #00ff88;
-            font-weight: 700;
-            margin-top: 30px;
-            padding: 25px;
-            background: rgba(0, 255, 136, 0.15);
-            border-radius: 10px;
-            border-left: 5px solid #00ff88;
-            max-width: 900px;
-            margin: 30px auto;
-        }
+/* CTA */
+.cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--sans); font-weight: 700; font-size: 14px;
+  padding: 11px 24px; border-radius: var(--r);
+  transition: all .18s; border: none; cursor: pointer; letter-spacing: -.1px;
+}
+.btn-primary { background: var(--blue); color: #fff; }
+.btn-primary:hover { background: var(--blue2); transform: translateY(-1px); }
+.btn-teal { background: rgba(10,181,162,.15); color: var(--teal2); border: 1px solid rgba(45,212,191,.3); }
+.btn-teal:hover { background: var(--teal); color: #fff; border-color: var(--teal); }
+.btn-ghost { background: transparent; color: var(--g300); border: 1px solid var(--border2); }
+.btn-ghost:hover { border-color: var(--teal2); color: var(--teal2); }
 
-        /* Impact Metrics - Bigger, Bolder */
-        .metrics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
-        }
+/* Scroll hint */
+.scroll-hint {
+  position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+  font-family: var(--mono); font-size: 10px; color: var(--g500);
+  letter-spacing: 1px; text-transform: uppercase;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+.scroll-arrow { animation: scrollBounce 1.8s ease-in-out infinite; }
+@keyframes scrollBounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)} }
 
-        .metric-card {
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(0, 255, 136, 0.1));
-            padding: 35px 25px;
-            border-radius: 12px;
-            text-align: center;
-            border: 2px solid rgba(0, 217, 255, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+/* ── SHARED SECTION ──────────────────────────────────────────────────────── */
+section { padding: 80px 40px; }
+.sec { max-width: 1040px; margin: 0 auto; }
+.sec-label {
+  font-family: var(--mono); font-size: 10.5px; font-weight: 600;
+  color: var(--teal2); letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.sec-title {
+  font-size: clamp(24px, 3.5vw, 36px); font-weight: 800;
+  letter-spacing: -1px; color: var(--white);
+  margin-bottom: 12px; line-height: 1.1;
+}
+.sec-body {
+  font-size: 15.5px; font-weight: 300; color: var(--g300);
+  max-width: 580px; line-height: 1.75; margin-bottom: 44px;
+}
+.divider { height: 1px; background: var(--border); }
 
-        .metric-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 217, 255, 0.3);
-        }
+/* ── PROOF / FEATURED ────────────────────────────────────────────────────── */
+#proof { background: var(--bg2); }
+.proof-featured {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  margin-bottom: 20px;
+}
+.proof-main {
+  grid-column: 1 / -1;
+  background: rgba(27,111,234,.06);
+  border: 1px solid rgba(27,111,234,.25);
+  border-radius: var(--r2); padding: 32px 36px;
+  display: flex; align-items: flex-start; gap: 28px;
+}
+.proof-main-icon {
+  font-size: 36px; flex-shrink: 0; margin-top: 4px;
+}
+.proof-main-label {
+  font-family: var(--mono); font-size: 10px; font-weight: 600;
+  color: var(--blue2); letter-spacing: 1.5px; text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.proof-main-title {
+  font-size: 22px; font-weight: 800; color: var(--white);
+  letter-spacing: -.5px; margin-bottom: 10px; line-height: 1.2;
+}
+.proof-main-body {
+  font-size: 14.5px; color: var(--g300); line-height: 1.75;
+  margin-bottom: 18px;
+}
+.proof-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 20px; }
+.pill {
+  font-family: var(--mono); font-size: 10.5px;
+  padding: 3px 10px; border-radius: 5px;
+  background: rgba(255,255,255,.04); border: 1px solid var(--border);
+  color: var(--g300);
+}
+.pill.blue { background: rgba(27,111,234,.1); border-color: rgba(61,142,245,.25); color: var(--blue2); }
+.pill.teal { background: rgba(10,181,162,.1); border-color: rgba(45,212,191,.25); color: var(--teal2); }
+.proof-links { display: flex; gap: 10px; flex-wrap: wrap; }
 
-        .metric-card .number {
-            font-size: 3em;
-            font-weight: 900;
-            background: linear-gradient(135deg, #00d9ff, #00ff88);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 10px;
-        }
+.proof-stat {
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  border-radius: var(--r2); padding: 24px 26px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.proof-stat-n {
+  font-family: var(--mono); font-size: 32px; font-weight: 600;
+  letter-spacing: -1px; color: var(--white); line-height: 1; margin-bottom: 6px;
+}
+.proof-stat-n.teal { color: var(--teal2); }
+.proof-stat-n.blue { color: var(--blue2); }
+.proof-stat-l {
+  font-family: var(--mono); font-size: 10px; color: var(--g500);
+  text-transform: uppercase; letter-spacing: 1px;
+}
 
-        .metric-card .label {
-            color: #ffffff;
-            font-size: 1.1em;
-            font-weight: 600;
-        }
+/* ── PROJECTS ────────────────────────────────────────────────────────────── */
+#projects { background: var(--bg3); }
+.proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.proj-card {
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  border-radius: var(--r2); padding: 24px 26px;
+  display: flex; flex-direction: column;
+  transition: border-color .18s, transform .18s;
+}
+.proj-card:hover { border-color: rgba(27,111,234,.35); transform: translateY(-2px); }
+.proj-card.secondary { opacity: .88; }
+.proj-type {
+  font-family: var(--mono); font-size: 9.5px; font-weight: 600;
+  padding: 2px 9px; border-radius: 4px;
+  letter-spacing: .8px; text-transform: uppercase;
+  width: fit-content; margin-bottom: 14px;
+}
+.proj-type.cyber { background: rgba(10,181,162,.1); color: var(--teal2); border: 1px solid rgba(45,212,191,.2); }
+.proj-type.ops { background: rgba(27,111,234,.1); color: var(--blue2); border: 1px solid rgba(61,142,245,.2); }
+.proj-icon { font-size: 24px; margin-bottom: 12px; }
+.proj-title { font-size: 17px; font-weight: 800; color: var(--white); letter-spacing: -.4px; margin-bottom: 8px; line-height: 1.25; }
+.proj-desc { font-size: 13.5px; color: var(--g300); line-height: 1.7; flex: 1; margin-bottom: 18px; }
+.proj-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+.proj-tag {
+  font-family: var(--mono); font-size: 10px;
+  padding: 2px 8px; border-radius: 4px;
+  background: rgba(255,255,255,.04); border: 1px solid var(--border);
+  color: var(--g500);
+}
+.proj-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-weight: 700; font-size: 13px;
+  padding: 8px 16px; border-radius: 7px;
+  transition: all .15s; width: fit-content;
+}
+.proj-link.primary { background: var(--blue); color: #fff; }
+.proj-link.primary:hover { background: var(--blue2); }
+.proj-link.teal { background: var(--teal); color: #fff; }
+.proj-link.teal:hover { background: var(--teal2); }
+.proj-link.outline { background: transparent; color: var(--g300); border: 1px solid var(--border2); }
+.proj-link.outline:hover { border-color: var(--teal2); color: var(--teal2); }
+.proj-links-row { display: flex; gap: 8px; flex-wrap: wrap; }
 
-        /* Core Competencies */
-        .section {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 40px;
-            margin-bottom: 40px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+/* ── SKILLS ─────────────────────────────────────────────────────────────── */
+#skills { background: var(--bg2); }
+.skills-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.skill-block {
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  border-radius: var(--r2); padding: 26px 28px;
+}
+.sb-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+.sb-title-row { display: flex; align-items: center; gap: 10px; }
+.sb-icon { font-size: 20px; }
+.sb-title { font-size: 15px; font-weight: 800; color: var(--white); }
+.sb-badge {
+  font-family: var(--mono); font-size: 9.5px; font-weight: 600;
+  padding: 2px 9px; border-radius: 100px; letter-spacing: .5px;
+}
+.sb-badge.cyber { background: rgba(10,181,162,.12); color: var(--teal2); border: 1px solid rgba(45,212,191,.2); }
+.sb-badge.ops { background: rgba(27,111,234,.12); color: var(--blue2); border: 1px solid rgba(61,142,245,.2); }
+.skill-rows { display: flex; flex-direction: column; gap: 7px; }
+.sk {
+  display: flex; align-items: flex-start; gap: 9px;
+  font-size: 13.5px; color: var(--g300); line-height: 1.5;
+}
+.sk::before { content: '▸'; color: var(--teal2); font-size: 9px; margin-top: 5px; flex-shrink: 0; }
+.sk.ops-sk::before { color: var(--blue2); }
 
-        .section h2 {
-            color: #00d9ff;
-            font-size: 2.2em;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid rgba(0, 217, 255, 0.4);
-            font-weight: 700;
-        }
+/* ── BACKGROUND ─────────────────────────────────────────────────────────── */
+#background { background: var(--bg3); }
+.bg-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: start; }
+.bg-transfer {
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  border-radius: var(--r2); padding: 24px;
+}
+.bg-transfer-title {
+  font-family: var(--mono); font-size: 10.5px; color: var(--blue2);
+  letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px;
+}
+.transfer-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13.5px; color: var(--g300); padding: 8px 0;
+  border-bottom: 1px solid var(--border); line-height: 1.5;
+}
+.transfer-item:last-child { border-bottom: none; }
+.transfer-item::before { content: '→'; color: var(--teal2); font-size: 12px; margin-top: 2px; flex-shrink: 0; }
+.bg-exp-list { display: flex; flex-direction: column; gap: 14px; }
+.bg-exp {
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  border-radius: var(--r2); padding: 20px 22px;
+  position: relative;
+}
+.bg-exp-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 4px; }
+.bg-exp-title { font-size: 15px; font-weight: 700; color: var(--white); letter-spacing: -.2px; }
+.bg-exp-date { font-family: var(--mono); font-size: 11px; color: var(--g500); white-space: nowrap; }
+.bg-exp-org { font-size: 12.5px; color: var(--g500); font-style: italic; margin-bottom: 10px; }
+.bg-exp-note { font-size: 13px; color: var(--g300); line-height: 1.6; }
+.bg-achievement {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 10px; font-family: var(--mono); font-size: 11px;
+  padding: 4px 10px; border-radius: 5px;
+  background: rgba(240,160,32,.08); border: 1px solid rgba(240,160,32,.2);
+  color: var(--gold);
+}
 
-        .section h3 {
-            color: #00ff88;
-            font-size: 1.5em;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
+/* ── RESUME ─────────────────────────────────────────────────────────────── */
+#resume { background: var(--bg2); }
+.resume-box {
+  background: rgba(27,111,234,.06);
+  border: 1px solid rgba(27,111,234,.2);
+  border-radius: var(--r2); padding: 32px 36px;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  flex-wrap: wrap;
+}
+.resume-left h3 { font-size: 20px; font-weight: 800; color: var(--white); letter-spacing: -.5px; margin-bottom: 8px; }
+.resume-left p { font-size: 14px; color: var(--g300); line-height: 1.65; max-width: 460px; }
+.resume-links { display: flex; gap: 12px; flex-shrink: 0; flex-wrap: wrap; }
 
-        /* Unique Value Proposition */
-        .uvp-section {
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.15), rgba(0, 255, 136, 0.15));
-            border: 2px solid #00ff88;
-            padding: 45px;
-            margin-bottom: 40px;
-            border-radius: 15px;
-        }
+/* ── CERTS ──────────────────────────────────────────────────────────────── */
+#certs { background: var(--bg3); }
+.certs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.cert {
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  border-radius: var(--r); padding: 16px 18px;
+}
+.cert-name { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+.cert-issuer { font-family: var(--mono); font-size: 10px; color: var(--g500); margin-bottom: 6px; }
+.cert-yr {
+  font-family: var(--mono); font-size: 10px;
+  padding: 2px 8px; border-radius: 4px; width: fit-content;
+  background: rgba(10,181,162,.08); color: var(--teal2); border: 1px solid rgba(45,212,191,.15);
+}
+.cert-yr.prog { background: rgba(240,160,32,.08); color: var(--gold); border-color: rgba(240,160,32,.2); }
 
-        .uvp-section h2 {
-            color: #00ff88;
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            text-align: center;
-        }
+/* ── CONTACT ────────────────────────────────────────────────────────────── */
+#contact {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(27,111,234,.1) 0%, transparent 60%),
+    var(--bg);
+  text-align: center; padding: 80px 40px 100px;
+}
+.contact-name {
+  font-family: var(--mono); font-size: 11px; color: var(--g500);
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;
+}
+.contact-title { font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: -1.2px; color: var(--white); margin-bottom: 14px; }
+.contact-sub { font-size: 15px; color: var(--g300); max-width: 440px; margin: 0 auto 36px; line-height: 1.7; }
+.contact-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.contact-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-weight: 700; font-size: 14px; padding: 12px 24px; border-radius: 9px;
+  transition: all .18s;
+}
+.cl-li { background: rgba(27,111,234,.12); color: var(--blue2); border: 1px solid rgba(61,142,245,.25); }
+.cl-li:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+.cl-gh { background: rgba(255,255,255,.05); color: var(--g100); border: 1px solid var(--border2); }
+.cl-gh:hover { background: rgba(255,255,255,.1); color: var(--white); }
+.cl-em { background: rgba(10,181,162,.1); color: var(--teal2); border: 1px solid rgba(45,212,191,.2); }
+.cl-em:hover { background: var(--teal); color: #fff; border-color: var(--teal); }
 
-        .uvp-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
+/* ── FOOTER ─────────────────────────────────────────────────────────────── */
+footer {
+  padding: 20px 40px;
+  border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  font-family: var(--mono); font-size: 11px; color: var(--g500);
+}
 
-        .uvp-item {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 25px;
-            border-radius: 10px;
-            border-left: 4px solid #00d9ff;
-        }
-
-        .uvp-item h4 {
-            color: #00d9ff;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-        }
-
-        .uvp-item p {
-            color: #d0d0d0;
-            font-size: 1.05em;
-            line-height: 1.7;
-        }
-
-        /* Expertise Grid */
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 30px;
-        }
-
-        .expertise-card {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 35px;
-            border-radius: 12px;
-            border: 2px solid rgba(0, 217, 255, 0.3);
-        }
-
-        .expertise-card h3 {
-            color: #00d9ff;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            margin-top: 0;
-        }
-
-        .expertise-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .expertise-list li {
-            padding: 12px 0 12px 30px;
-            position: relative;
-            color: #e0e0e0;
-            font-size: 1.05em;
-            line-height: 1.6;
-        }
-
-        .expertise-list li:before {
-            content: "▸";
-            position: absolute;
-            left: 0;
-            color: #00ff88;
-            font-weight: bold;
-            font-size: 1.3em;
-        }
-
-        .expertise-list li strong {
-            color: #00d9ff;
-        }
-
-        /* Skills Display */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .skill-badge {
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(0, 255, 136, 0.2));
-            color: #ffffff;
-            padding: 12px 18px;
-            border-radius: 8px;
-            font-size: 1em;
-            font-weight: 600;
-            border: 1px solid rgba(0, 217, 255, 0.4);
-            text-align: center;
-            transition: transform 0.2s;
-        }
-
-        .skill-badge:hover {
-            transform: scale(1.05);
-            border-color: #00ff88;
-        }
-
-        /* Professional Credentials */
-        .credentials {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 25px;
-        }
-
-        .credential-badge {
-            background: rgba(0, 255, 136, 0.15);
-            border: 2px solid #00ff88;
-            padding: 15px 25px;
-            border-radius: 25px;
-            color: #00ff88;
-            font-weight: 600;
-            font-size: 1.05em;
-        }
-
-        /* CTA Buttons */
-        .cta-section {
-            text-align: center;
-            padding: 50px 20px;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 15px;
-            margin: 40px 0;
-        }
-
-        .cta-section h2 {
-            color: #ffffff;
-            font-size: 2.5em;
-            margin-bottom: 30px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 18px 45px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.2em;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #00ff88, #00d9ff);
-            color: #000;
-            box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 35px rgba(0, 255, 136, 0.6);
-        }
-
-        .btn-secondary {
-            background: linear-gradient(135deg, #00d9ff, #0088ff);
-            color: #fff;
-            box-shadow: 0 8px 25px rgba(0, 217, 255, 0.4);
-        }
-
-        .btn-secondary:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 35px rgba(0, 217, 255, 0.6);
-        }
-
-        /* Contact Grid */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .contact-card {
-            background: rgba(0, 217, 255, 0.1);
-            padding: 25px;
-            border-radius: 12px;
-            border: 2px solid rgba(0, 217, 255, 0.3);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-            border-color: #00ff88;
-        }
-
-        .contact-card .icon {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-
-        .contact-card .label {
-            color: #a0a0a0;
-            font-size: 0.95em;
-            margin-bottom: 8px;
-        }
-
-        .contact-card a {
-            color: #00d9ff;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1em;
-        }
-
-        .contact-card a:hover {
-            color: #00ff88;
-        }
-
-        /* Responsive */
-        @media (max-width: 968px) {
-            .hero h1 {
-                font-size: 2.2em;
-            }
-            .expertise-grid {
-                grid-template-columns: 1fr;
-            }
-            .metrics {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #666;
-            font-size: 0.95em;
-        }
-    </style>
+/* ── RESPONSIVE ──────────────────────────────────────────────────────────── */
+@media(max-width:800px) {
+  nav { padding: 0 20px; }
+  .nav-links { gap: 16px; }
+  section { padding: 60px 20px; }
+  .proof-featured { grid-template-columns: 1fr; }
+  .proof-main { flex-direction: column; gap: 14px; }
+  .proj-grid { grid-template-columns: 1fr; }
+  .skills-cols { grid-template-columns: 1fr; }
+  .bg-grid { grid-template-columns: 1fr; }
+  .certs-grid { grid-template-columns: 1fr 1fr; }
+  .resume-box { flex-direction: column; }
+  .hero-name { font-size: 42px; }
+  #hero { padding: 90px 20px 60px; text-align: left; }
+  .cta-row { justify-content: flex-start; }
+  .hero-badge { font-size: 10px; }
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <!-- Hero Section -->
-        <div class="hero">
-            <h1>MARCUS ALBRIGHT</h1>
-            <div class="title">Mortgage Fraud & Compliance Specialist | Cybersecurity</div>
-            <div class="value-prop">
-                Rare combination of <strong>deep mortgage fraud and compliance expertise</strong> with <strong>technical cybersecurity capabilities</strong>. 
-                I solve problems that traditional analysts can't—automating compliance workflows, detecting sophisticated mortgage fraud patterns, 
-                and bridging the gap between regulatory requirements and technical security operations.
-            </div>
-            <div class="power-statement">
-                While others specialize in one domain, I operate at the intersection of mortgage compliance and technology—
-                delivering measurable business impact through innovation.
-            </div>
-        </div>
 
-        <!-- Impact Metrics -->
-        <div class="metrics">
-            <div class="metric-card">
-                <div class="number">1,000+</div>
-                <div class="label">Mortgage Fraud Investigations<br>100% Compliance Record</div>
-            </div>
-            <div class="metric-card">
-                <div class="number">$500K+</div>
-                <div class="label">Mortgage Fraud Prevented<br>Through Pattern Analysis</div>
-            </div>
-            <div class="metric-card">
-                <div class="number">35%</div>
-                <div class="label">Efficiency Improvement<br>Via Process Automation</div>
-            </div>
-            <div class="metric-card">
-                <div class="number">100%</div>
-                <div class="label">Audit Success Rate<br>No Findings Across Reviews</div>
-            </div>
-        </div>
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-id">Marcus <span class="teal">Albright</span></div>
+  <div class="nav-links">
+    <a href="#proof">Work</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#background">Background</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-        <!-- Unique Value Proposition -->
-        <div class="uvp-section">
-            <h2>🎯 Competitive Advantage: Mortgage Expertise Meets Technology</h2>
-            <p style="text-align: center; font-size: 1.2em; color: #ffffff; margin-bottom: 30px;">
-                Most professionals are strong in ONE domain. I excel in BOTH—combining mortgage industry expertise with technical capabilities that traditional candidates cannot deliver.
-            </p>
-            <div class="uvp-grid">
-                <div class="uvp-item">
-                    <h4>🔍 What Traditional Mortgage Compliance Analysts Can't Do</h4>
-                    <p>
-                        Build automation tools • Write scripts to streamline workflows • Analyze security logs • 
-                        Integrate technical security controls • Leverage SIEM platforms • Apply coding to compliance problems
-                    </p>
-                </div>
-                <div class="uvp-item">
-                    <h4>🛡️ What Traditional Security Analysts Lack</h4>
-                    <p>
-                        Understanding of mortgage fraud schemes • Regulatory knowledge (RESPA, TILA, ECOA) • Loan document analysis • 
-                        Occupancy fraud detection • Income verification expertise • Experience with mortgage audits and examinations
-                    </p>
-                </div>
-                <div class="uvp-item">
-                    <h4>⚡ What I Deliver</h4>
-                    <p>
-                        Automated compliance workflows • Technical fraud detection • Bridged security/compliance gaps • 
-                        Data-driven risk assessments • Modern tooling for mortgage problems • Regulatory expertise with technical execution
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Core Expertise -->
-        <div class="section">
-            <h2>💼 Core Expertise</h2>
-            <div class="expertise-grid">
-                <!-- Mortgage Compliance & Fraud -->
-                <div class="expertise-card">
-                    <h3>Mortgage Fraud & Compliance</h3>
-                    <p style="color: #a0a0a0; margin-bottom: 20px; font-size: 1.05em;">7+ Years | Mortgage Lending Institutions</p>
-                    <ul class="expertise-list">
-                        <li><strong>Fraud Detection:</strong> 1,000+ investigations, occupancy fraud, income/employment verification, straw buyers, appraisal fraud</li>
-                        <li><strong>Regulatory Compliance:</strong> RESPA, TILA, ECOA, HMDA, QM/ATR rules, fair lending compliance</li>
-                        <li><strong>Loan Analysis:</strong> Document verification, underwriting review, debt-to-income analysis, red flag identification</li>
-                        <li><strong>AML/BSA:</strong> Suspicious Activity Reports (SARs), CTR filing, OFAC screening, beneficial ownership verification</li>
-                        <li><strong>Quality Control:</strong> Pre/post-close QC reviews, audit preparation, regulatory examination support</li>
-                        <li><strong>Operations:</strong> Process optimization (35% efficiency gains), KPI tracking, executive reporting</li>
-                    </ul>
-                    <h3 style="margin-top: 30px;">Tools & Platforms</h3>
-                    <div class="skills-grid">
-                        <div class="skill-badge">Excel Advanced</div>
-                        <div class="skill-badge">Salesforce</div>
-                        <div class="skill-badge">Zendesk</div>
-                        <div class="skill-badge">V-Lookups</div>
-                        <div class="skill-badge">Pivot Tables</div>
-                        <div class="skill-badge">Macros</div>
-                        <div class="skill-badge">SQL</div>
-                        <div class="skill-badge">Data Analysis</div>
-                    </div>
-                </div>
-
-                <!-- Technical Capabilities -->
-                <div class="expertise-card">
-                    <h3>Technical & Cybersecurity Capabilities</h3>
-                    <p style="color: #a0a0a0; margin-bottom: 20px; font-size: 1.05em;">Specialized Training | Practical Application</p>
-                    <ul class="expertise-list">
-                        <li><strong>Security Operations:</strong> SIEM analysis (Splunk), log correlation, threat detection, incident investigation</li>
-                        <li><strong>Network Security:</strong> Packet analysis (Wireshark), network scanning (Nmap), traffic monitoring</li>
-                        <li><strong>Vulnerability Assessment:</strong> Security scanning, penetration testing tools, vulnerability management</li>
-                        <li><strong>Automation & Scripting:</strong> Python, Bash, PowerShell for workflow automation and data processing</li>
-                        <li><strong>Cloud & Infrastructure:</strong> AWS fundamentals, cloud security basics, infrastructure analysis</li>
-                    </ul>
-                    <h3 style="margin-top: 30px;">Technical Stack</h3>
-                    <div class="skills-grid">
-                        <div class="skill-badge">Splunk</div>
-                        <div class="skill-badge">Wireshark</div>
-                        <div class="skill-badge">Nmap</div>
-                        <div class="skill-badge">Metasploit</div>
-                        <div class="skill-badge">Burp Suite</div>
-                        <div class="skill-badge">Kali Linux</div>
-                        <div class="skill-badge">Python</div>
-                        <div class="skill-badge">Bash</div>
-                        <div class="skill-badge">PowerShell</div>
-                        <div class="skill-badge">AWS</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Professional Credentials -->
-        <div class="section">
-            <h2>📜 Professional Credentials & Development</h2>
-            <div class="credentials">
-                <div class="credential-badge">🎓 CompTIA Security+ (In Progress)</div>
-                <div class="credential-badge">🎓 Network Defense Essentials - EC-Council</div>
-                <div class="credential-badge">🎓 AWS Cloud Technical Essentials</div>
-                <div class="credential-badge">🎓 Cybersecurity Fundamentals - University of Tennessee</div>
-                <div class="credential-badge">🎓 Risk Management - NY Institute of Finance</div>
-                <div class="credential-badge">🎓 Quickstart Bootcamp - University of Tennessee</div>
-            </div>
-        </div>
-
-        <!-- Real Business Impact -->
-        <div class="section">
-            <h2>📊 Proven Business Impact</h2>
-            <div style="background: rgba(0, 255, 136, 0.1); padding: 25px; border-radius: 10px; border-left: 4px solid #00ff88; margin-bottom: 30px;">
-                <p style="font-size: 1.2em; color: #ffffff; margin: 0;">
-                    <strong>Attention to Detail:</strong> My work has withstood multiple regulatory examinations, internal audits, 
-                    and quality control reviews—consistently receiving commendation for thoroughness, accuracy, and documentation quality.
-                </p>
-            </div>
-            <div class="uvp-grid">
-                <div class="uvp-item">
-                    <h4>Efficiency & Automation</h4>
-                    <p>
-                        • 35% improvement in investigation processing time through automated workflows<br>
-                        • Developed tools that reduced manual data entry and analysis<br>
-                        • Streamlined reporting processes for compliance and audit teams
-                    </p>
-                </div>
-                <div class="uvp-item">
-                    <h4>Fraud Prevention</h4>
-                    <p>
-                        • $500K+ in potential fraud exposure identified and prevented<br>
-                        • Advanced pattern recognition for suspicious activity detection<br>
-                        • Enhanced monitoring protocols that improved detection rates
-                    </p>
-                </div>
-                <div class="uvp-item">
-                    <h4>Regulatory Excellence</h4>
-                    <p>
-                        • 100% compliance record across 1,000+ investigations<br>
-                        • Successfully passed all regulatory examinations with no findings<br>
-                        • Meticulous documentation and audit-ready case files<br>
-                        • Proven attention to detail under regulatory scrutiny
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Target Opportunities -->
-        <div class="section">
-            <h2>🎯 Target Opportunities</h2>
-            <p style="font-size: 1.2em; margin-bottom: 25px; color: #ffffff;">
-                Seeking roles where my unique combination of mortgage expertise and technical capabilities drives competitive advantage:
-            </p>
-            <div class="uvp-grid">
-                <div class="uvp-item">
-                    <h4>Primary Focus Areas</h4>
-                    <p>
-                        • <strong>Mortgage Fraud Analyst</strong> - Senior level fraud detection and prevention<br>
-                        • <strong>Mortgage Compliance Analyst</strong> - Regulatory compliance with process improvement focus<br>
-                        • <strong>QC Analyst</strong> - Pre/post-close quality control with technical automation<br>
-                        • <strong>BSA/AML Analyst</strong> - Mortgage-focused AML/SAR/CTR compliance
-                    </p>
-                </div>
-                <div class="uvp-item">
-                    <h4>High-Value Opportunities</h4>
-                    <p>
-                        • <strong>Fraud Operations Manager</strong> - Leading fraud detection teams with technical innovation<br>
-                        • <strong>GRC Analyst</strong> - Governance, Risk & Compliance with technical components<br>
-                        • <strong>Security Analyst</strong> - Financial services security with mortgage fraud context<br>
-                        • <strong>Hybrid Roles</strong> - Bridging mortgage compliance, fraud prevention, and security functions
-                    </p>
-                </div>
-            </div>
-            <p style="margin-top: 30px; font-size: 1.1em; color: #00ff88;">
-                <strong>Location:</strong> Remote-First (Preferred) or Atlanta-Based | 
-                <strong>Type:</strong> Full-Time or Contract | 
-                <strong>Availability:</strong> Immediate
-            </p>
-        </div>
-
-        <!-- CTA Section -->
-        <div class="cta-section">
-            <h2>Let's Connect</h2>
-            <p style="font-size: 1.2em; color: #d0d0d0; margin-bottom: 35px; max-width: 700px; margin-left: auto; margin-right: auto;">
-                Ready to discuss how I can deliver measurable impact to your compliance, security, or fraud prevention initiatives.
-            </p>
-            <div class="cta-buttons">
-                <a href="https://calendly.com/marcus-albright/30min" target="_blank" class="btn btn-primary">
-                    📅 Schedule a Meeting
-                </a>
-                <a href="MARCUS_ALBRIGHT_RESUME.pdf" download class="btn btn-secondary" style="margin: 0 10px;">
-                    📄 Download Resume (PDF)
-                </a>
-                <a href="MARCUS_ALBRIGHT_RESUME.docx" download class="btn btn-secondary">
-                    📄 Download Resume (Word)
-                </a>
-            </div>
-
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="icon">📧</div>
-                    <div class="label">Email</div>
-                    <a href="mailto:marcus.albright@gmail.com">marcus.albright@gmail.com</a>
-                </div>
-                <div class="contact-card">
-                    <div class="icon">📱</div>
-                    <div class="label">Phone</div>
-                    <a href="tel:702-328-2272">702-328-2272</a>
-                </div>
-                <div class="contact-card">
-                    <div class="icon">💻</div>
-                    <div class="label">GitHub</div>
-                    <a href="https://techbymarcus.github.io/aboutMarcus/" target="_blank">techbymarcus.github.io/aboutMarcus</a>
-                </div>
-                <div class="contact-card">
-                    <div class="icon">💼</div>
-                    <div class="label">LinkedIn</div>
-                    <a href="#" target="_blank">Connect on LinkedIn</a>
-                </div>
-            </div>
-        </div>
-
-        <footer>
-            <p>© 2025 Marcus Albright | Delivering Excellence at the Intersection of Compliance & Technology</p>
-        </footer>
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="live-dot"></span>
+      Open to SOC Analyst &amp; Security Operations Roles
     </div>
+    <div class="hero-name">Marcus<br/><span class="accent">Albright</span></div>
+    <div class="hero-role">
+      <strong>SOC Analysis &amp; Cybersecurity</strong> &nbsp;·&nbsp;
+      Entry Level · Atlanta, GA · Remote
+    </div>
+    <p class="hero-summary">
+      Hands-on SOC investigations, security labs, and structured incident documentation —
+      backed by <strong>20+ years of operational discipline</strong> in high-volume,
+      compliance-driven environments.
+    </p>
+    <div class="cta-row">
+      <a href="#proof" class="btn btn-primary">View My Work</a>
+      <a href="https://github.com/techByMarcus" target="_blank" class="btn btn-teal">GitHub</a>
+      <a href="https://linkedin.com/in/marcus-a-69ab2989" target="_blank" class="btn btn-ghost">LinkedIn</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <span class="scroll-arrow">↓</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── PROOF ── -->
+<section id="proof">
+  <div class="sec">
+    <div class="sec-label">Featured Work</div>
+    <div class="sec-title">SOC Investigations &amp; Lab Work</div>
+    <p class="sec-body">
+      20+ security incident investigations completed across EC-Council EHE/NDE lab environments,
+      LetsDefend SIEM simulations, and the University of Tennessee Cybersecurity Bootcamp.
+    </p>
+
+    <div class="proof-featured">
+      <div class="proof-main">
+        <div class="proof-main-icon">🔍</div>
+        <div>
+          <div class="proof-main-label">Primary Portfolio · Cybersecurity</div>
+          <div class="proof-main-title">SOC Analyst Portfolio</div>
+          <div class="proof-main-body">
+            Documented security incident investigations covering brute force attacks, phishing campaigns,
+            malware infections, and account compromise scenarios. Each investigation includes alert triage,
+            log correlation, MITRE ATT&amp;CK technique mapping, and structured findings documentation.
+            Conducted using Splunk log analysis, LetsDefend SIEM, and EC-Council lab environments.
+          </div>
+          <div class="proof-pills">
+            <span class="pill teal">Alert Triage</span>
+            <span class="pill teal">Log Analysis · Splunk</span>
+            <span class="pill teal">MITRE ATT&amp;CK</span>
+            <span class="pill teal">Incident Documentation</span>
+            <span class="pill">Phishing</span>
+            <span class="pill">Brute Force</span>
+            <span class="pill">Malware</span>
+            <span class="pill">Cyber Kill Chain</span>
+          </div>
+          <div class="proof-links">
+            <a href="https://github.com/techByMarcus/soc-analyst-portfolio" target="_blank" class="btn btn-primary">View on GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-stat">
+        <div class="proof-stat-n teal">20+</div>
+        <div class="proof-stat-l">Incidents Investigated</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-n blue">3</div>
+        <div class="proof-stat-l">Lab Environments</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-n">5</div>
+        <div class="proof-stat-l">Active Certifications</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-n">4</div>
+        <div class="proof-stat-l">GitHub Repositories</div>
+      </div>
+    </div>
+
+    <!-- Context note — honest positioning -->
+    <div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-left:3px solid var(--teal2);border-radius:var(--r);padding:16px 20px;font-size:13px;color:var(--g300);line-height:1.65;">
+      <span style="font-family:var(--mono);font-size:10px;color:var(--teal2);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px;">Context</span>
+      All cybersecurity work was completed through structured training environments — EC-Council labs,
+      LetsDefend SOC simulations, and UT Cybersecurity Bootcamp exercises. This is applied learning,
+      not professional SOC employment. I am actively seeking my first cybersecurity role.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── PROJECTS ── -->
+<section id="projects">
+  <div class="sec">
+    <div class="sec-label">All Projects</div>
+    <div class="sec-title">Work on GitHub</div>
+    <p class="sec-body">Four repositories — three cybersecurity, one operations — all built to demonstrate real capability.</p>
+
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-type cyber">Cybersecurity</div>
+        <div class="proj-icon">🔒</div>
+        <div class="proj-title">SOC Analyst Portfolio</div>
+        <div class="proj-desc">
+          20+ security incident investigations with full documentation —
+          alert triage, log correlation, MITRE ATT&amp;CK mapping, and
+          structured incident reports.
+        </div>
+        <div class="proj-tags">
+          <span class="proj-tag">LetsDefend</span>
+          <span class="proj-tag">Splunk</span>
+          <span class="proj-tag">MITRE ATT&amp;CK</span>
+          <span class="proj-tag">Incident Response</span>
+        </div>
+        <div class="proj-links-row">
+          <a href="https://github.com/techByMarcus/soc-analyst-portfolio" target="_blank" class="proj-link primary">GitHub →</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-type cyber">Cybersecurity</div>
+        <div class="proj-icon">📋</div>
+        <div class="proj-title">Real-World Log Investigation</div>
+        <div class="proj-desc">
+          Account compromise simulation — authentication log analysis,
+          attack timeline reconstruction, lateral movement identification,
+          and evidence-backed incident report.
+        </div>
+        <div class="proj-tags">
+          <span class="proj-tag">Log Analysis</span>
+          <span class="proj-tag">Timeline Reconstruction</span>
+          <span class="proj-tag">IOC Identification</span>
+          <span class="proj-tag">Report Writing</span>
+        </div>
+        <div class="proj-links-row">
+          <a href="https://github.com/techByMarcus/real-world-log-investigation" target="_blank" class="proj-link primary">GitHub →</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-type cyber">Cybersecurity</div>
+        <div class="proj-icon">🔧</div>
+        <div class="proj-title">Security Audit Lab</div>
+        <div class="proj-desc">
+          Windows and Linux virtual lab — host discovery with Nmap,
+          traffic analysis with Wireshark, vulnerability documentation,
+          and a custom system configuration audit tool.
+        </div>
+        <div class="proj-tags">
+          <span class="proj-tag">Nmap</span>
+          <span class="proj-tag">Wireshark</span>
+          <span class="proj-tag">Vulnerability Assessment</span>
+          <span class="proj-tag">Risk Documentation</span>
+        </div>
+        <div class="proj-links-row">
+          <a href="https://github.com/techByMarcus/security-audit-lab" target="_blank" class="proj-link primary">GitHub →</a>
+        </div>
+      </div>
+
+      <div class="proj-card secondary">
+        <div class="proj-type ops">Operations / CRM</div>
+        <div class="proj-icon">🏠</div>
+        <div class="proj-title">LoanFlow CRM</div>
+        <div class="proj-desc">
+          Full mortgage pipeline management system — 8-stage Kanban,
+          automation engine, audit log, and task manager.
+          Demonstrates workflow systems thinking and structured data tracking.
+        </div>
+        <div class="proj-tags">
+          <span class="proj-tag">Pipeline Management</span>
+          <span class="proj-tag">Automation Logic</span>
+          <span class="proj-tag">Audit Log</span>
+          <span class="proj-tag">React</span>
+        </div>
+        <div class="proj-links-row">
+          <a href="https://techByMarcus.github.io/mortgage-crm" target="_blank" class="proj-link teal">Live Demo →</a>
+          <a href="https://github.com/techByMarcus/mortgage-crm" target="_blank" class="proj-link outline">GitHub →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── SKILLS ── -->
+<section id="skills">
+  <div class="sec">
+    <div class="sec-label">Capabilities</div>
+    <div class="sec-title">What I Can Do</div>
+    <p class="sec-body">Cybersecurity skills built through labs and training. Operations skills built over 20+ years of real-world work.</p>
+
+    <div class="skills-cols">
+      <div class="skill-block">
+        <div class="sb-head">
+          <div class="sb-title-row">
+            <span class="sb-icon">🔒</span>
+            <span class="sb-title">Cybersecurity</span>
+          </div>
+          <span class="sb-badge cyber">Labs &amp; Training</span>
+        </div>
+        <div class="skill-rows">
+          <div class="sk">SOC alert triage &amp; incident investigation — 20+ cases on LetsDefend</div>
+          <div class="sk">Log analysis &amp; event correlation using Splunk (lab environments)</div>
+          <div class="sk">MITRE ATT&amp;CK framework — certified, applied in investigations</div>
+          <div class="sk">Cyber Kill Chain — certified</div>
+          <div class="sk">Phishing investigation &amp; email header analysis</div>
+          <div class="sk">Network scanning — Nmap, traffic analysis — Wireshark</div>
+          <div class="sk">Incident documentation &amp; structured findings reports</div>
+          <div class="sk">Windows environments, basic Linux, Active Directory (foundational)</div>
+          <div class="sk">EC-Council EHE and NDE lab environments</div>
+          <div class="sk">CompTIA Security+ — in progress</div>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="sb-head">
+          <div class="sb-title-row">
+            <span class="sb-icon">⚙️</span>
+            <span class="sb-title">Operations &amp; Systems</span>
+          </div>
+          <span class="sb-badge ops">20+ Years</span>
+        </div>
+        <div class="skill-rows">
+          <div class="sk ops-sk">Salesforce CRM — daily user, pipeline management, data integrity</div>
+          <div class="sk ops-sk">High-volume workflow execution &amp; SLA management</div>
+          <div class="sk ops-sk">Structured documentation &amp; audit-ready record keeping</div>
+          <div class="sk ops-sk">Cross-functional coordination across compliance and operations teams</div>
+          <div class="sk ops-sk">Team leadership — 40+ direct reports</div>
+          <div class="sk ops-sk">Performance coaching, KPI tracking, accountability systems</div>
+          <div class="sk ops-sk">Executive reporting &amp; operational visibility</div>
+          <div class="sk ops-sk">Process improvement &amp; SOP design</div>
+          <div class="sk ops-sk">MS Office — Excel, SharePoint, Outlook</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── BACKGROUND ── -->
+<section id="background">
+  <div class="sec">
+    <div class="sec-label">Professional Background</div>
+    <div class="sec-title">Why Operations Experience Matters in Security</div>
+    <p class="sec-body">
+      The discipline required in enterprise operations — documentation accuracy, escalation judgment,
+      SLA management, and structured reporting — translates directly to SOC work.
+    </p>
+
+    <div class="bg-grid">
+      <div>
+        <div class="bg-transfer">
+          <div class="bg-transfer-title">Transferable to Cybersecurity</div>
+          <div class="transfer-item">Structured documentation → Incident report writing</div>
+          <div class="transfer-item">Escalation discipline → Alert triage and escalation decisions</div>
+          <div class="transfer-item">SLA management → Response time adherence in SOC workflows</div>
+          <div class="transfer-item">Anomaly identification → Suspicious pattern recognition in logs</div>
+          <div class="transfer-item">Compliance mindset → Security policy and control awareness</div>
+          <div class="transfer-item">Workflow tracking → Open/closed ticket management</div>
+          <div class="transfer-item">Cross-functional coordination → Incident response team work</div>
+        </div>
+      </div>
+
+      <div class="bg-exp-list">
+        <div class="bg-exp">
+          <div class="bg-exp-top">
+            <div class="bg-exp-title">Client Operations Manager</div>
+            <div class="bg-exp-date">2024 – 2025</div>
+          </div>
+          <div class="bg-exp-org">Confidential Organization · Atlanta, GA · Remote</div>
+          <div class="bg-exp-note">
+            Managed 40–60+ concurrent accounts in Salesforce CRM — pipeline tracking,
+            data integrity, SLA enforcement, executive reporting, and cross-functional
+            workflow coordination.
+          </div>
+        </div>
+        <div class="bg-exp">
+          <div class="bg-exp-top">
+            <div class="bg-exp-title">Senior Loan Officer — Client Operations</div>
+            <div class="bg-exp-date">2004 – 2023</div>
+          </div>
+          <div class="bg-exp-org">Multiple Financial Services Organizations · United States</div>
+          <div class="bg-exp-note">
+            Daily Salesforce user across 19 years — pipeline lifecycle management,
+            compliance tracking, structured reporting, and cross-functional coordination
+            in regulated financial environments.
+          </div>
+        </div>
+        <div class="bg-exp">
+          <div class="bg-exp-top">
+            <div class="bg-exp-title">Branch Manager / Operations Leader</div>
+            <div class="bg-exp-date">1998 – 2004</div>
+          </div>
+          <div class="bg-exp-org">Consumer Direct Operations · Multiple Locations</div>
+          <div class="bg-exp-note">
+            Led 40+ direct reports across high-volume customer-facing operations.
+            Coaching, KPI management, SOP design, compliance enforcement, and
+            executive performance reporting.
+          </div>
+          <div class="bg-achievement">🏆 #1 of 400+ locations · 30%+ above performance goals</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── RESUME ── -->
+<section id="resume">
+  <div class="sec">
+    <div class="sec-label">Resume</div>
+    <div class="resume-box">
+      <div class="resume-left">
+        <h3>Marcus Albright — Resume</h3>
+        <p>
+          Two versions available: cybersecurity-focused (SOC Analyst, Security Analyst roles)
+          and operations-focused (CRM Ops, Sales Ops, Client Operations roles).
+          Both are honest, targeted, and ATS-optimized.
+        </p>
+      </div>
+      <div class="resume-links">
+        <a href="https://linkedin.com/in/marcus-a-69ab2989" target="_blank" class="btn btn-primary">View on LinkedIn</a>
+        <a href="https://github.com/techByMarcus" target="_blank" class="btn btn-ghost">GitHub Profile</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── CERTS ── -->
+<section id="certs">
+  <div class="sec">
+    <div class="sec-label">Certifications &amp; Training</div>
+    <div class="sec-title">Credentials</div>
+    <div class="certs-grid" style="margin-top:32px">
+      <div class="cert">
+        <div class="cert-name">Ethical Hacking Essentials (EHE)</div>
+        <div class="cert-issuer">EC-Council</div>
+        <div class="cert-yr">2026</div>
+      </div>
+      <div class="cert">
+        <div class="cert-name">Network Defense Essentials (NDE)</div>
+        <div class="cert-issuer">EC-Council</div>
+        <div class="cert-yr">2025</div>
+      </div>
+      <div class="cert">
+        <div class="cert-name">SOC Member + MITRE ATT&amp;CK</div>
+        <div class="cert-issuer">LetsDefend</div>
+        <div class="cert-yr">2026</div>
+      </div>
+      <div class="cert">
+        <div class="cert-name">Cyber Kill Chain</div>
+        <div class="cert-issuer">LetsDefend</div>
+        <div class="cert-yr">2026</div>
+      </div>
+      <div class="cert">
+        <div class="cert-name">Cybersecurity Bootcamp</div>
+        <div class="cert-issuer">University of Tennessee</div>
+        <div class="cert-yr">2025</div>
+      </div>
+      <div class="cert">
+        <div class="cert-name">Risk Management &amp; Credit Principles</div>
+        <div class="cert-issuer">New York Institute of Finance</div>
+        <div class="cert-yr">2025</div>
+      </div>
+      <div class="cert">
+        <div class="cert-name">Cloud Technical Essentials</div>
+        <div class="cert-issuer">Amazon Web Services</div>
+        <div class="cert-yr">2025</div>
+      </div>
+      <div class="cert">
+        <div class="cert-name">Technical Support Basics</div>
+        <div class="cert-issuer">IBM</div>
+        <div class="cert-yr">2025</div>
+      </div>
+      <div class="cert">
+        <div class="cert-name">CompTIA Security+</div>
+        <div class="cert-issuer">CompTIA</div>
+        <div class="cert-yr prog">In Progress</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="contact-name">Get In Touch</div>
+  <div class="contact-title">Open to SOC &amp; Security Roles</div>
+  <p class="contact-sub">
+    Available immediately. Remote preferred, open to hybrid in Atlanta, GA.
+    Targeting SOC Analyst, Security Analyst, and security operations roles.
+  </p>
+  <div class="contact-links">
+    <a href="https://linkedin.com/in/marcus-a-69ab2989" target="_blank" class="contact-link cl-li">💼 LinkedIn</a>
+    <a href="https://github.com/techByMarcus" target="_blank" class="contact-link cl-gh">🐙 GitHub</a>
+    <a href="mailto:marcus.albright@gmail.com" class="contact-link cl-em">✉️ marcus.albright@gmail.com</a>
+  </div>
+  <p style="margin-top:28px;font-family:var(--mono);font-size:11px;color:var(--g500)">(702) 328-2272 &nbsp;·&nbsp; Atlanta, GA</p>
+</section>
+
+<footer>
+  <span>Marcus Albright · Cybersecurity &amp; Operations</span>
+  <span style="font-family:var(--mono)">github.com/techByMarcus</span>
+</footer>
+
 </body>
 </html>
