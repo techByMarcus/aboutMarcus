@@ -3,7 +3,7 @@
 
 📍 Atlanta, GA · Remote  
 📧 marcus.albright@gmail.com  
-💼 [LinkedIn](https://linkedin.com/in/marcus-a-69ab2989)  
+💼 [LinkedIn](https://www.linkedin.com/in/marcus-a-69ab2989/)  
 🔗 [Portfolio Site](https://techbymarcus.github.io/aboutMarcus/)
 
 ---
@@ -12,13 +12,13 @@
 
 Watch a recorded SOC investigation walkthrough demonstrating log analysis, pattern detection, and escalation decisions:
 
-👉 [View Investigation Walkthrough](PASTE_VIDEO_LINK_HERE)
+👉 [View Investigation Walkthrough](https://1drv.ms/v/c/6300dd9e66455bb4/IQBN5gGwLOtSRY9s3RrkyAuFAXWsjNEHSijdlywmsVKI5bc?e=rPyYsS)
 
 ---
 
 ## About Me
 
-Cybersecurity-focused professional with hands-on SOC investigations including log analysis, threat detection, and incident triage.
+Cybersecurity-focused professional with hands-on investigation experience in log analysis, threat detection, and incident triage.
 
 Backed by 20+ years of enterprise operations experience, I bring structured thinking, workflow discipline, and risk awareness to security analysis.
 
