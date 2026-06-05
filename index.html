@@ -1,869 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Marcus Albright — SOC Analyst | Cybersecurity</title>
-<meta name="description" content="Marcus Albright — Cybersecurity analyst with hands-on SOC investigations, security labs, and 20+ years operational discipline. Targeting SOC Analyst and security operations roles."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marcus Albright — Compliance, Risk &amp; Cybersecurity</title>
+<meta name="description" content="Marcus Albright — compliance and risk professional with 20+ years in regulated financial services, now applying that discipline to cybersecurity, GRC, and security operations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* ── TOKENS ─────────────────────────────────────────────────────────────── */
-:root {
-  --bg:       #070E19;
-  --bg2:      #0B1525;
-  --bg3:      #0F1E35;
-  --border:   rgba(255,255,255,.07);
-  --border2:  rgba(255,255,255,.12);
-  --blue:     #1B6FEA;
-  --blue2:    #3D8EF5;
-  --teal:     #0AB5A2;
-  --teal2:    #2DD4BF;
-  --green:    #10B981;
-  --gold:     #F0A020;
-  --red:      #EF4444;
-  --white:    #EFF4FA;
-  --g100:     #C8D8E8;
-  --g300:     #7A94AE;
-  --g500:     #3E5468;
-  --g700:     #1E2E3E;
-  --mono:     'JetBrains Mono', monospace;
-  --sans:     'Outfit', sans-serif;
-  --r:        10px;
-  --r2:       16px;
-}
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; font-size:16px; }
-body {
-  font-family: var(--sans);
-  background: var(--bg);
-  color: var(--white);
-  line-height: 1.65;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 2px; }
-a { color: inherit; text-decoration: none; }
+  :root{
+    --bg:#100f0d;
+    --bg-2:#16140f;
+    --surface:#1b1813;
+    --surface-2:#211d16;
+    --line:rgba(201,168,114,0.14);
+    --line-soft:rgba(236,232,225,0.08);
+    --ink:#ece8e1;
+    --ink-2:#a9a298;
+    --ink-3:#736c61;
+    --gold:#c9a872;
+    --gold-bright:#e0c189;
+    --serif:'Fraunces',Georgia,serif;
+    --sans:'Archivo',-apple-system,BlinkMacSystemFont,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --maxw:1120px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    background:radial-gradient(120% 80% at 80% -10%,rgba(201,168,114,0.07),transparent 55%);
+    pointer-events:none;z-index:0;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--gold);color:#1a160f}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px}
+  .mono{font-family:var(--mono);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:500}
 
-/* ── NAV ────────────────────────────────────────────────────────────────── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: 58px; padding: 0 40px;
-  display: flex; align-items: center; justify-content: space-between;
-  background: rgba(7,14,25,.93);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-}
-.nav-id {
-  font-family: var(--mono); font-size: 13px; font-weight: 600;
-  color: var(--white); letter-spacing: -.2px;
-}
-.nav-id .teal { color: var(--teal2); }
-.nav-links { display: flex; gap: 24px; }
-.nav-links a {
-  font-family: var(--mono); font-size: 11.5px; font-weight: 500;
-  color: var(--g300); letter-spacing: .5px; text-transform: uppercase;
-  transition: color .15s;
-}
-.nav-links a:hover { color: var(--teal2); }
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(10px);
+      background:rgba(16,15,13,0.72);border-bottom:1px solid var(--line-soft);transition:.3s}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{font-family:var(--serif);font-size:20px;font-weight:500;letter-spacing:.01em}
+  .brand b{color:var(--gold);font-weight:500}
+  .nav-links{display:flex;gap:34px;align-items:center}
+  .nav-links a{font-size:13px;letter-spacing:.06em;color:var(--ink-2);text-transform:uppercase;transition:.2s;font-weight:500}
+  .nav-links a:hover{color:var(--gold)}
+  .nav-cta{border:1px solid var(--line);padding:9px 18px;border-radius:2px;color:var(--ink)!important}
+  .nav-cta:hover{border-color:var(--gold);background:rgba(201,168,114,.08)}
+  .menu-btn{display:none}
 
-/* ── HERO ───────────────────────────────────────────────────────────────── */
-#hero {
-  min-height: 100vh;
-  display: flex; align-items: center; justify-content: center;
-  padding: 100px 40px 80px;
-  position: relative; overflow: hidden;
-}
-/* Grid background */
-#hero::before {
-  content: ''; position: absolute; inset: 0; z-index: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, black 30%, transparent 80%);
-}
-/* Glow */
-#hero::after {
-  content: ''; position: absolute; top: -10%; left: 50%;
-  transform: translateX(-50%);
-  width: 700px; height: 500px; border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(27,111,234,.12) 0%, transparent 65%);
-  pointer-events: none; z-index: 0;
-}
-.hero-inner {
-  position: relative; z-index: 1; max-width: 760px; text-align: center;
-}
+  /* HERO */
+  header{position:relative;z-index:1;padding:200px 0 130px;border-bottom:1px solid var(--line-soft)}
+  .eyebrow{margin-bottom:34px;display:flex;align-items:center;gap:16px}
+  .eyebrow::after{content:"";height:1px;width:64px;background:var(--gold);opacity:.5}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,7vw,86px);line-height:1.02;letter-spacing:-.02em;margin-bottom:30px;max-width:15ch}
+  h1 em{font-style:italic;color:var(--gold)}
+  .lede{font-size:clamp(18px,2vw,21px);color:var(--ink-2);max-width:60ch;line-height:1.6;margin-bottom:44px;font-weight:400}
+  .lede b{color:var(--ink);font-weight:500}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .btn{font-family:var(--sans);font-size:14px;font-weight:500;letter-spacing:.02em;padding:15px 28px;border-radius:2px;transition:.25s;display:inline-flex;align-items:center;gap:10px;cursor:pointer}
+  .btn-primary{background:var(--gold);color:#171309;border:1px solid var(--gold)}
+  .btn-primary:hover{background:var(--gold-bright);border-color:var(--gold-bright);transform:translateY(-2px)}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
 
-/* Typing badge */
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--mono); font-size: 11px; font-weight: 500;
-  color: var(--teal2); letter-spacing: 1px; text-transform: uppercase;
-  background: rgba(10,181,162,.09);
-  border: 1px solid rgba(45,212,191,.2);
-  border-radius: 100px; padding: 5px 16px;
-  margin-bottom: 28px;
-}
-.live-dot {
-  width: 6px; height: 6px; border-radius: 50%; background: var(--teal2);
-  animation: blink 2s ease-in-out infinite;
-}
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+  /* SECTION */
+  section{position:relative;z-index:1;padding:110px 0;border-bottom:1px solid var(--line-soft)}
+  .sec-head{display:flex;align-items:baseline;gap:20px;margin-bottom:56px}
+  .sec-num{font-family:var(--mono);font-size:13px;color:var(--gold);letter-spacing:.1em}
+  .sec-title{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4vw,46px);letter-spacing:-.015em;line-height:1.1}
 
-/* Name */
-.hero-name {
-  font-size: clamp(46px, 7vw, 78px);
-  font-weight: 800; line-height: 1.0;
-  letter-spacing: -2.5px; color: var(--white);
-  margin-bottom: 4px;
-}
-.hero-name .accent { color: var(--teal2); }
+  /* PROPOSITION */
+  .prop-lead{font-family:var(--serif);font-size:clamp(22px,2.6vw,30px);line-height:1.45;font-weight:300;max-width:24ch;color:var(--ink);margin-bottom:64px}
+  .prop-lead em{font-style:italic;color:var(--gold)}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
+  .pillar{background:var(--bg);padding:40px 34px;transition:.3s}
+  .pillar:hover{background:var(--bg-2)}
+  .pillar .pn{font-family:var(--mono);font-size:12px;color:var(--gold);letter-spacing:.1em;margin-bottom:22px}
+  .pillar h3{font-family:var(--serif);font-weight:500;font-size:23px;margin-bottom:14px;line-height:1.2}
+  .pillar p{color:var(--ink-2);font-size:15.5px;line-height:1.62}
 
-/* Role line */
-.hero-role {
-  font-size: clamp(16px, 2.2vw, 21px);
-  font-weight: 400; color: var(--g100);
-  margin: 20px 0 30px; line-height: 1.4;
-}
-.hero-role strong { color: var(--white); font-weight: 700; }
+  /* CASE STUDY */
+  .case{background:linear-gradient(180deg,var(--surface),var(--bg-2));border:1px solid var(--line);border-radius:4px;overflow:hidden}
+  .case-top{padding:48px 48px 38px;border-bottom:1px solid var(--line-soft)}
+  .case-tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);padding:6px 14px;border-radius:2px;margin-bottom:26px}
+  .case-title{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.4vw,40px);line-height:1.12;letter-spacing:-.015em;margin-bottom:18px}
+  .case-sub{color:var(--ink-2);font-size:17px;max-width:62ch;line-height:1.6}
+  .case-body{display:grid;grid-template-columns:1.4fr 1fr;gap:0}
+  .case-col{padding:42px 48px}
+  .case-col + .case-col{border-left:1px solid var(--line-soft)}
+  .case-block{margin-bottom:32px}
+  .case-block:last-child{margin-bottom:0}
+  .case-block h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  .case-block p{color:var(--ink-2);font-size:15.5px;line-height:1.66}
+  .case-block ul{list-style:none}
+  .case-block li{color:var(--ink-2);font-size:15.5px;line-height:1.5;padding-left:22px;position:relative;margin-bottom:11px}
+  .case-block li::before{content:"";position:absolute;left:0;top:10px;width:7px;height:1px;background:var(--gold)}
+  .case-block li b{color:var(--ink);font-weight:500}
+  .case-foot{padding:30px 48px;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;background:rgba(0,0,0,.15)}
+  .stack{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--ink-2);border:1px solid var(--line-soft);padding:5px 11px;border-radius:2px}
+  .case-link{font-size:14px;font-weight:500;color:var(--gold);display:inline-flex;gap:8px;align-items:center;transition:.2s;white-space:nowrap}
+  .case-link:hover{gap:13px}
 
-/* Summary */
-.hero-summary {
-  font-size: 16px; font-weight: 300;
-  color: var(--g300); max-width: 580px;
-  margin: 0 auto 36px; line-height: 1.8;
-}
-.hero-summary strong { color: var(--g100); font-weight: 500; }
+  /* SUPPORTING */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:var(--surface);border:1px solid var(--line-soft);border-radius:4px;padding:34px 30px;transition:.3s;display:flex;flex-direction:column}
+  .card:hover{border-color:var(--line);transform:translateY(-3px)}
+  .card .pn{font-family:var(--mono);font-size:12px;color:var(--gold);letter-spacing:.1em;margin-bottom:20px}
+  .card h3{font-family:var(--serif);font-weight:500;font-size:21px;line-height:1.2;margin-bottom:13px}
+  .card p{color:var(--ink-2);font-size:14.5px;line-height:1.6;flex:1;margin-bottom:20px}
+  .card .stack{margin-top:auto}
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);margin-top:48px}
+  .metric{background:var(--bg);padding:36px 28px;text-align:left}
+  .metric .num{font-family:var(--serif);font-weight:400;font-size:46px;line-height:1;color:var(--gold);margin-bottom:12px}
+  .metric .lbl{font-size:13px;color:var(--ink-2);letter-spacing:.02em;line-height:1.4}
 
-/* CTA */
-.cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-.btn {
-  display: inline-flex; align-items: center; gap: 7px;
-  font-family: var(--sans); font-weight: 700; font-size: 14px;
-  padding: 11px 24px; border-radius: var(--r);
-  transition: all .18s; border: none; cursor: pointer; letter-spacing: -.1px;
-}
-.btn-primary { background: var(--blue); color: #fff; }
-.btn-primary:hover { background: var(--blue2); transform: translateY(-1px); }
-.btn-teal { background: rgba(10,181,162,.15); color: var(--teal2); border: 1px solid rgba(45,212,191,.3); }
-.btn-teal:hover { background: var(--teal); color: #fff; border-color: var(--teal); }
-.btn-ghost { background: transparent; color: var(--g300); border: 1px solid var(--border2); }
-.btn-ghost:hover { border-color: var(--teal2); color: var(--teal2); }
+  /* BACKGROUND */
+  .bg-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:72px}
+  .bg-intro p{color:var(--ink-2);font-size:16.5px;line-height:1.7;margin-bottom:22px}
+  .bg-intro p b{color:var(--ink);font-weight:500}
+  .bg-intro .prop-lead{font-size:clamp(21px,2.4vw,27px);margin-bottom:34px}
+  .timeline{position:relative}
+  .job{position:relative;padding:0 0 38px 30px;border-left:1px solid var(--line)}
+  .job:last-child{padding-bottom:0;border-left:1px solid transparent}
+  .job::before{content:"";position:absolute;left:-5px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--gold)}
+  .job .yr{font-family:var(--mono);font-size:12px;color:var(--gold);letter-spacing:.06em;margin-bottom:8px}
+  .job h4{font-family:var(--serif);font-weight:500;font-size:20px;line-height:1.2;margin-bottom:5px}
+  .job .org{color:var(--ink-2);font-size:14.5px;margin-bottom:12px}
+  .job p{color:var(--ink-3);font-size:14.5px;line-height:1.6}
+  .job p{color:var(--ink-2)}
 
-/* Scroll hint */
-.scroll-hint {
-  position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
-  font-family: var(--mono); font-size: 10px; color: var(--g500);
-  letter-spacing: 1px; text-transform: uppercase;
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
-}
-.scroll-arrow { animation: scrollBounce 1.8s ease-in-out infinite; }
-@keyframes scrollBounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)} }
+  /* CERTS */
+  .certs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
+  .cert{background:var(--bg);padding:26px 26px;transition:.3s}
+  .cert:hover{background:var(--bg-2)}
+  .cert .cn{font-family:var(--serif);font-size:17px;font-weight:500;line-height:1.25;margin-bottom:7px}
+  .cert .ci{font-size:13px;color:var(--ink-2)}
+  .cert .badge{display:inline-block;margin-top:10px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);padding:3px 9px;border-radius:2px}
 
-/* ── SHARED SECTION ──────────────────────────────────────────────────────── */
-section { padding: 80px 40px; }
-.sec { max-width: 1040px; margin: 0 auto; }
-.sec-label {
-  font-family: var(--mono); font-size: 10.5px; font-weight: 600;
-  color: var(--teal2); letter-spacing: 2px; text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.sec-title {
-  font-size: clamp(24px, 3.5vw, 36px); font-weight: 800;
-  letter-spacing: -1px; color: var(--white);
-  margin-bottom: 12px; line-height: 1.1;
-}
-.sec-body {
-  font-size: 15.5px; font-weight: 300; color: var(--g300);
-  max-width: 580px; line-height: 1.75; margin-bottom: 44px;
-}
-.divider { height: 1px; background: var(--border); }
+  /* COMPETENCIES */
+  .comp-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:44px}
+  .comp{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ink-2);border:1px solid var(--line-soft);padding:9px 15px;border-radius:2px;transition:.2s}
+  .comp:hover{border-color:var(--gold);color:var(--gold)}
 
-/* ── PROOF / FEATURED ────────────────────────────────────────────────────── */
-#proof { background: var(--bg2); }
-.proof-featured {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
-  margin-bottom: 20px;
-}
-.proof-main {
-  grid-column: 1 / -1;
-  background: rgba(27,111,234,.06);
-  border: 1px solid rgba(27,111,234,.25);
-  border-radius: var(--r2); padding: 32px 36px;
-  display: flex; align-items: flex-start; gap: 28px;
-}
-.proof-main-icon {
-  font-size: 36px; flex-shrink: 0; margin-top: 4px;
-}
-.proof-main-label {
-  font-family: var(--mono); font-size: 10px; font-weight: 600;
-  color: var(--blue2); letter-spacing: 1.5px; text-transform: uppercase;
-  margin-bottom: 8px;
-}
-.proof-main-title {
-  font-size: 22px; font-weight: 800; color: var(--white);
-  letter-spacing: -.5px; margin-bottom: 10px; line-height: 1.2;
-}
-.proof-main-body {
-  font-size: 14.5px; color: var(--g300); line-height: 1.75;
-  margin-bottom: 18px;
-}
-.proof-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 20px; }
-.pill {
-  font-family: var(--mono); font-size: 10.5px;
-  padding: 3px 10px; border-radius: 5px;
-  background: rgba(255,255,255,.04); border: 1px solid var(--border);
-  color: var(--g300);
-}
-.pill.blue { background: rgba(27,111,234,.1); border-color: rgba(61,142,245,.25); color: var(--blue2); }
-.pill.teal { background: rgba(10,181,162,.1); border-color: rgba(45,212,191,.25); color: var(--teal2); }
-.proof-links { display: flex; gap: 10px; flex-wrap: wrap; }
+  /* CONTACT */
+  #contact{border-bottom:none}
+  .contact-inner{text-align:center;max-width:760px;margin:0 auto}
+  .contact-inner h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5vw,58px);line-height:1.08;letter-spacing:-.02em;margin:22px 0 26px}
+  .contact-inner h2 em{font-style:italic;color:var(--gold)}
+  .contact-inner .lede{margin:0 auto 44px;text-align:center}
+  .contact-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
-.proof-stat {
-  background: rgba(255,255,255,.03);
-  border: 1px solid var(--border);
-  border-radius: var(--r2); padding: 24px 26px;
-  display: flex; flex-direction: column; justify-content: center;
-}
-.proof-stat-n {
-  font-family: var(--mono); font-size: 32px; font-weight: 600;
-  letter-spacing: -1px; color: var(--white); line-height: 1; margin-bottom: 6px;
-}
-.proof-stat-n.teal { color: var(--teal2); }
-.proof-stat-n.blue { color: var(--blue2); }
-.proof-stat-l {
-  font-family: var(--mono); font-size: 10px; color: var(--g500);
-  text-transform: uppercase; letter-spacing: 1px;
-}
+  footer{position:relative;z-index:1;padding:40px 0;border-top:1px solid var(--line-soft)}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+  footer p{font-size:13px;color:var(--ink-3);letter-spacing:.02em}
+  footer .mono{color:var(--ink-3)}
 
-/* ── PROJECTS ────────────────────────────────────────────────────────────── */
-#projects { background: var(--bg3); }
-.proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.proj-card {
-  background: rgba(255,255,255,.03);
-  border: 1px solid var(--border);
-  border-radius: var(--r2); padding: 24px 26px;
-  display: flex; flex-direction: column;
-  transition: border-color .18s, transform .18s;
-}
-.proj-card:hover { border-color: rgba(27,111,234,.35); transform: translateY(-2px); }
-.proj-card.secondary { opacity: .88; }
-.proj-type {
-  font-family: var(--mono); font-size: 9.5px; font-weight: 600;
-  padding: 2px 9px; border-radius: 4px;
-  letter-spacing: .8px; text-transform: uppercase;
-  width: fit-content; margin-bottom: 14px;
-}
-.proj-type.cyber { background: rgba(10,181,162,.1); color: var(--teal2); border: 1px solid rgba(45,212,191,.2); }
-.proj-type.ops { background: rgba(27,111,234,.1); color: var(--blue2); border: 1px solid rgba(61,142,245,.2); }
-.proj-icon { font-size: 24px; margin-bottom: 12px; }
-.proj-title { font-size: 17px; font-weight: 800; color: var(--white); letter-spacing: -.4px; margin-bottom: 8px; line-height: 1.25; }
-.proj-desc { font-size: 13.5px; color: var(--g300); line-height: 1.7; flex: 1; margin-bottom: 18px; }
-.proj-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
-.proj-tag {
-  font-family: var(--mono); font-size: 10px;
-  padding: 2px 8px; border-radius: 4px;
-  background: rgba(255,255,255,.04); border: 1px solid var(--border);
-  color: var(--g500);
-}
-.proj-link {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-weight: 700; font-size: 13px;
-  padding: 8px 16px; border-radius: 7px;
-  transition: all .15s; width: fit-content;
-}
-.proj-link.primary { background: var(--blue); color: #fff; }
-.proj-link.primary:hover { background: var(--blue2); }
-.proj-link.teal { background: var(--teal); color: #fff; }
-.proj-link.teal:hover { background: var(--teal2); }
-.proj-link.outline { background: transparent; color: var(--g300); border: 1px solid var(--border2); }
-.proj-link.outline:hover { border-color: var(--teal2); color: var(--teal2); }
-.proj-links-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
 
-/* ── SKILLS ─────────────────────────────────────────────────────────────── */
-#skills { background: var(--bg2); }
-.skills-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.skill-block {
-  background: rgba(255,255,255,.03);
-  border: 1px solid var(--border);
-  border-radius: var(--r2); padding: 26px 28px;
-}
-.sb-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
-.sb-title-row { display: flex; align-items: center; gap: 10px; }
-.sb-icon { font-size: 20px; }
-.sb-title { font-size: 15px; font-weight: 800; color: var(--white); }
-.sb-badge {
-  font-family: var(--mono); font-size: 9.5px; font-weight: 600;
-  padding: 2px 9px; border-radius: 100px; letter-spacing: .5px;
-}
-.sb-badge.cyber { background: rgba(10,181,162,.12); color: var(--teal2); border: 1px solid rgba(45,212,191,.2); }
-.sb-badge.ops { background: rgba(27,111,234,.12); color: var(--blue2); border: 1px solid rgba(61,142,245,.2); }
-.skill-rows { display: flex; flex-direction: column; gap: 7px; }
-.sk {
-  display: flex; align-items: flex-start; gap: 9px;
-  font-size: 13.5px; color: var(--g300); line-height: 1.5;
-}
-.sk::before { content: '▸'; color: var(--teal2); font-size: 9px; margin-top: 5px; flex-shrink: 0; }
-.sk.ops-sk::before { color: var(--blue2); }
-
-/* ── BACKGROUND ─────────────────────────────────────────────────────────── */
-#background { background: var(--bg3); }
-.bg-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: start; }
-.bg-transfer {
-  background: rgba(255,255,255,.03);
-  border: 1px solid var(--border);
-  border-radius: var(--r2); padding: 24px;
-}
-.bg-transfer-title {
-  font-family: var(--mono); font-size: 10.5px; color: var(--blue2);
-  letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px;
-}
-.transfer-item {
-  display: flex; align-items: flex-start; gap: 10px;
-  font-size: 13.5px; color: var(--g300); padding: 8px 0;
-  border-bottom: 1px solid var(--border); line-height: 1.5;
-}
-.transfer-item:last-child { border-bottom: none; }
-.transfer-item::before { content: '→'; color: var(--teal2); font-size: 12px; margin-top: 2px; flex-shrink: 0; }
-.bg-exp-list { display: flex; flex-direction: column; gap: 14px; }
-.bg-exp {
-  background: rgba(255,255,255,.03);
-  border: 1px solid var(--border);
-  border-radius: var(--r2); padding: 20px 22px;
-  position: relative;
-}
-.bg-exp-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 4px; }
-.bg-exp-title { font-size: 15px; font-weight: 700; color: var(--white); letter-spacing: -.2px; }
-.bg-exp-date { font-family: var(--mono); font-size: 11px; color: var(--g500); white-space: nowrap; }
-.bg-exp-org { font-size: 12.5px; color: var(--g500); font-style: italic; margin-bottom: 10px; }
-.bg-exp-note { font-size: 13px; color: var(--g300); line-height: 1.6; }
-.bg-achievement {
-  display: inline-flex; align-items: center; gap: 6px;
-  margin-top: 10px; font-family: var(--mono); font-size: 11px;
-  padding: 4px 10px; border-radius: 5px;
-  background: rgba(240,160,32,.08); border: 1px solid rgba(240,160,32,.2);
-  color: var(--gold);
-}
-
-/* ── RESUME ─────────────────────────────────────────────────────────────── */
-#resume { background: var(--bg2); }
-.resume-box {
-  background: rgba(27,111,234,.06);
-  border: 1px solid rgba(27,111,234,.2);
-  border-radius: var(--r2); padding: 32px 36px;
-  display: flex; align-items: center; justify-content: space-between; gap: 24px;
-  flex-wrap: wrap;
-}
-.resume-left h3 { font-size: 20px; font-weight: 800; color: var(--white); letter-spacing: -.5px; margin-bottom: 8px; }
-.resume-left p { font-size: 14px; color: var(--g300); line-height: 1.65; max-width: 460px; }
-.resume-links { display: flex; gap: 12px; flex-shrink: 0; flex-wrap: wrap; }
-
-/* ── CERTS ──────────────────────────────────────────────────────────────── */
-#certs { background: var(--bg3); }
-.certs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.cert {
-  background: rgba(255,255,255,.03);
-  border: 1px solid var(--border);
-  border-radius: var(--r); padding: 16px 18px;
-}
-.cert-name { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
-.cert-issuer { font-family: var(--mono); font-size: 10px; color: var(--g500); margin-bottom: 6px; }
-.cert-yr {
-  font-family: var(--mono); font-size: 10px;
-  padding: 2px 8px; border-radius: 4px; width: fit-content;
-  background: rgba(10,181,162,.08); color: var(--teal2); border: 1px solid rgba(45,212,191,.15);
-}
-.cert-yr.prog { background: rgba(240,160,32,.08); color: var(--gold); border-color: rgba(240,160,32,.2); }
-
-/* ── CONTACT ────────────────────────────────────────────────────────────── */
-#contact {
-  background:
-    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(27,111,234,.1) 0%, transparent 60%),
-    var(--bg);
-  text-align: center; padding: 80px 40px 100px;
-}
-.contact-name {
-  font-family: var(--mono); font-size: 11px; color: var(--g500);
-  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;
-}
-.contact-title { font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: -1.2px; color: var(--white); margin-bottom: 14px; }
-.contact-sub { font-size: 15px; color: var(--g300); max-width: 440px; margin: 0 auto 36px; line-height: 1.7; }
-.contact-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-.contact-link {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-weight: 700; font-size: 14px; padding: 12px 24px; border-radius: 9px;
-  transition: all .18s;
-}
-.cl-li { background: rgba(27,111,234,.12); color: var(--blue2); border: 1px solid rgba(61,142,245,.25); }
-.cl-li:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
-.cl-gh { background: rgba(255,255,255,.05); color: var(--g100); border: 1px solid var(--border2); }
-.cl-gh:hover { background: rgba(255,255,255,.1); color: var(--white); }
-.cl-em { background: rgba(10,181,162,.1); color: var(--teal2); border: 1px solid rgba(45,212,191,.2); }
-.cl-em:hover { background: var(--teal); color: #fff; border-color: var(--teal); }
-
-/* ── FOOTER ─────────────────────────────────────────────────────────────── */
-footer {
-  padding: 20px 40px;
-  border-top: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: space-between;
-  font-family: var(--mono); font-size: 11px; color: var(--g500);
-}
-
-/* ── RESPONSIVE ──────────────────────────────────────────────────────────── */
-@media(max-width:800px) {
-  nav { padding: 0 20px; }
-  .nav-links { gap: 16px; }
-  section { padding: 60px 20px; }
-  .proof-featured { grid-template-columns: 1fr; }
-  .proof-main { flex-direction: column; gap: 14px; }
-  .proj-grid { grid-template-columns: 1fr; }
-  .skills-cols { grid-template-columns: 1fr; }
-  .bg-grid { grid-template-columns: 1fr; }
-  .certs-grid { grid-template-columns: 1fr 1fr; }
-  .resume-box { flex-direction: column; }
-  .hero-name { font-size: 42px; }
-  #hero { padding: 90px 20px 60px; text-align: left; }
-  .cta-row { justify-content: flex-start; }
-  .hero-badge { font-size: 10px; }
-}
+  @media(max-width:900px){
+    .wrap{padding:0 24px}
+    .nav-links{display:none}
+    .pillars,.grid-3,.certs{grid-template-columns:1fr}
+    .metrics{grid-template-columns:repeat(2,1fr)}
+    .case-body{grid-template-columns:1fr}
+    .case-col + .case-col{border-left:none;border-top:1px solid var(--line-soft)}
+    .case-top,.case-col,.case-foot{padding-left:28px;padding-right:28px}
+    .bg-grid{grid-template-columns:1fr;gap:48px}
+    header{padding:150px 0 90px}
+    section{padding:80px 0}
+  }
 </style>
 </head>
 <body>
 
-<!-- ── NAV ── -->
 <nav>
-  <div class="nav-id">Marcus <span class="teal">Albright</span></div>
-  <div class="nav-links">
-    <a href="#proof">Work</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#background">Background</a>
-    <a href="#resume">Resume</a>
-    <a href="#contact">Contact</a>
+  <div class="wrap">
+    <a href="#top" class="brand">Marcus <b>Albright</b></a>
+    <div class="nav-links">
+      <a href="#proposition">Profile</a>
+      <a href="#casestudy">Case Study</a>
+      <a href="#work">Work</a>
+      <a href="#background">Background</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
   </div>
 </nav>
 
-<!-- ── HERO ── -->
-<section id="hero">
-  <div class="hero-inner">
-    <div class="hero-badge">
-      <span class="live-dot"></span>
-      Open to SOC Analyst &amp; Security Operations Roles
-    </div>
-    <div class="hero-name">Marcus<br/><span class="accent">Albright</span></div>
-    <div class="hero-role">
-      <strong>SOC Analysis &amp; Cybersecurity</strong> &nbsp;·&nbsp;
-      Entry Level · Atlanta, GA · Remote
-    </div>
-    <p class="hero-summary">
-      Hands-on SOC investigations, security labs, and structured incident documentation —
-      backed by <strong>20+ years of operational discipline</strong> in high-volume,
-      compliance-driven environments.
-    </p>
-    <div class="cta-row">
-      <a href="#proof" class="btn btn-primary">View My Work</a>
-      <a href="https://github.com/techByMarcus" target="_blank" class="btn btn-teal">GitHub</a>
-      <a href="https://linkedin.com/in/marcus-a-69ab2989" target="_blank" class="btn btn-ghost">LinkedIn</a>
+<header id="top">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span class="mono">Compliance &amp; Risk · Cybersecurity</span></div>
+    <h1 class="reveal">20 years inside regulated financial services. <em>Now I protect it.</em></h1>
+    <p class="lede reveal">Compliance and risk professional bringing two decades of <b>GLBA, RESPA, TILA, and CFPB</b> discipline to information security — translating regulatory depth into NIST CSF risk assessments, controls gap analysis, and hands-on security operations.</p>
+    <div class="cta-row reveal">
+      <a href="#casestudy" class="btn btn-primary">View the Case Study →</a>
+      <a href="resume.pdf" class="btn btn-ghost" download>Download Résumé (PDF)</a>
+      <a href="https://www.linkedin.com/in/marcus-a-69ab2989" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
     </div>
   </div>
-  <div class="scroll-hint">
-    <span>Scroll</span>
-    <span class="scroll-arrow">↓</span>
-  </div>
-</section>
+</header>
 
-<div class="divider"></div>
-
-<!-- ── PROOF ── -->
-<section id="proof">
-  <div class="sec">
-    <div class="sec-label">Featured Work</div>
-    <div class="sec-title">SOC Investigations &amp; Lab Work</div>
-    <p class="sec-body">
-      20+ security incident investigations completed across EC-Council EHE/NDE lab environments,
-      LetsDefend SIEM simulations, and the University of Tennessee Cybersecurity Bootcamp.
-    </p>
-
-    <div class="proof-featured">
-      <div class="proof-main">
-        <div class="proof-main-icon">🔍</div>
-        <div>
-          <div class="proof-main-label">Primary Portfolio · Cybersecurity</div>
-          <div class="proof-main-title">SOC Analyst Portfolio</div>
-          <div class="proof-main-body">
-            Documented security incident investigations covering brute force attacks, phishing campaigns,
-            malware infections, and account compromise scenarios. Each investigation includes alert triage,
-            log correlation, MITRE ATT&amp;CK technique mapping, and structured findings documentation.
-            Conducted using Splunk log analysis, LetsDefend SIEM, and EC-Council lab environments.
-          </div>
-          <div class="proof-pills">
-            <span class="pill teal">Alert Triage</span>
-            <span class="pill teal">Log Analysis · Splunk</span>
-            <span class="pill teal">MITRE ATT&amp;CK</span>
-            <span class="pill teal">Incident Documentation</span>
-            <span class="pill">Phishing</span>
-            <span class="pill">Brute Force</span>
-            <span class="pill">Malware</span>
-            <span class="pill">Cyber Kill Chain</span>
-          </div>
-          <div class="proof-links">
-            <a href="https://github.com/techByMarcus/soc-analyst-portfolio" target="_blank" class="btn btn-primary">View on GitHub →</a>
-          </div>
-        </div>
+<!-- PROPOSITION -->
+<section id="proposition">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">01</span>
+      <h2 class="sec-title">The proposition</h2>
+    </div>
+    <p class="prop-lead reveal">Most security analysts learn compliance on the job. <em>I spent twenty years living inside it</em> — then built the technical skills to defend it.</p>
+    <div class="pillars reveal">
+      <div class="pillar">
+        <div class="pn">01 — Regulatory depth</div>
+        <h3>Twenty years in the regulated world</h3>
+        <p>Direct, hands-on accountability for GLBA Safeguards, RESPA, TILA, and CFPB obligations — audit-ready documentation, PII protection, and examiner-grade record keeping across the loan lifecycle.</p>
       </div>
-
-      <div class="proof-stat">
-        <div class="proof-stat-n teal">20+</div>
-        <div class="proof-stat-l">Incidents Investigated</div>
+      <div class="pillar">
+        <div class="pn">02 — Technical security</div>
+        <h3>Built for the analyst's desk</h3>
+        <p>NIST CSF and ISO/IEC 27001 study, SIEM operations on Splunk and Wazuh, MITRE ATT&amp;CK mapping, threat hunting, and 20+ hands-on incident investigations with documented evidence packages.</p>
       </div>
-      <div class="proof-stat">
-        <div class="proof-stat-n blue">3</div>
-        <div class="proof-stat-l">Lab Environments</div>
-      </div>
-      <div class="proof-stat">
-        <div class="proof-stat-n">5</div>
-        <div class="proof-stat-l">Active Certifications</div>
-      </div>
-      <div class="proof-stat">
-        <div class="proof-stat-n">4</div>
-        <div class="proof-stat-l">GitHub Repositories</div>
+      <div class="pillar">
+        <div class="pn">03 — The translation layer</div>
+        <h3>Where the two meet</h3>
+        <p>I turn regulation into controls, controls into evidence, and evidence into risk-scored reporting an auditor or examiner will accept. That bridge is rare — and it's the entire job in GRC.</p>
       </div>
     </div>
-
-    <!-- Context note — honest positioning -->
-    <div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-left:3px solid var(--teal2);border-radius:var(--r);padding:16px 20px;font-size:13px;color:var(--g300);line-height:1.65;">
-      <span style="font-family:var(--mono);font-size:10px;color:var(--teal2);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px;">Context</span>
-      All cybersecurity work was completed through structured training environments — EC-Council labs,
-      LetsDefend SOC simulations, and UT Cybersecurity Bootcamp exercises. This is applied learning,
-      not professional SOC employment. I am actively seeking my first cybersecurity role.
+    <div class="comp-row reveal">
+      <span class="comp">GRC</span>
+      <span class="comp">Risk Assessment</span>
+      <span class="comp">NIST Cybersecurity Framework</span>
+      <span class="comp">ISO/IEC 27001</span>
+      <span class="comp">Controls Gap Analysis</span>
+      <span class="comp">Risk Registers</span>
+      <span class="comp">Audit Readiness</span>
+      <span class="comp">Vendor Risk</span>
+      <span class="comp">GLBA · RESPA · TILA · CFPB</span>
+      <span class="comp">PII Safeguarding</span>
+      <span class="comp">SIEM — Splunk · Wazuh</span>
+      <span class="comp">MITRE ATT&amp;CK</span>
+      <span class="comp">Incident Response</span>
+      <span class="comp">Threat Hunting · IOC Extraction</span>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- ── PROJECTS ── -->
-<section id="projects">
-  <div class="sec">
-    <div class="sec-label">All Projects</div>
-    <div class="sec-title">Work on GitHub</div>
-    <p class="sec-body">Four repositories — three cybersecurity, one operations — all built to demonstrate real capability.</p>
-
-    <div class="proj-grid">
-      <div class="proj-card">
-        <div class="proj-type cyber">Cybersecurity</div>
-        <div class="proj-icon">🔒</div>
-        <div class="proj-title">SOC Analyst Portfolio</div>
-        <div class="proj-desc">
-          20+ security incident investigations with full documentation —
-          alert triage, log correlation, MITRE ATT&amp;CK mapping, and
-          structured incident reports.
+<!-- CASE STUDY -->
+<section id="casestudy">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">02</span>
+      <h2 class="sec-title">Featured case study</h2>
+    </div>
+    <div class="case reveal">
+      <div class="case-top">
+        <span class="case-tag">GRC Risk Assessment · NIST CSF</span>
+        <h3 class="case-title">Pinnacle: a risk assessment of a residential mortgage-lending workflow</h3>
+        <p class="case-sub">A full governance, risk, and compliance assessment applying the NIST Cybersecurity Framework to a regulated lending process — the exact domain I've operated in for two decades.</p>
+      </div>
+      <div class="case-body">
+        <div class="case-col">
+          <div class="case-block">
+            <h4>The challenge</h4>
+            <p>Residential mortgage lending moves high volumes of sensitive customer PII through CRM, origination, and document systems under GLBA, RESPA, TILA, and CFPB obligations. The objective: assess where that workflow was exposed and produce findings a compliance or examination team could act on.</p>
+          </div>
+          <div class="case-block">
+            <h4>Approach</h4>
+            <ul>
+              <li>Mapped the end-to-end lending workflow against the five <b>NIST CSF</b> functions — Identify, Protect, Detect, Respond, Recover.</li>
+              <li>Performed a <b>controls gap analysis</b>, identifying where existing safeguards fell short of framework expectations.</li>
+              <li>Documented <b>risk-scored findings</b> mapped directly to financial-services regulatory obligations.</li>
+              <li>Produced a prioritized <b>remediation roadmap</b> with audit-ready evidence and rationale.</li>
+            </ul>
+          </div>
         </div>
-        <div class="proj-tags">
-          <span class="proj-tag">LetsDefend</span>
-          <span class="proj-tag">Splunk</span>
-          <span class="proj-tag">MITRE ATT&amp;CK</span>
-          <span class="proj-tag">Incident Response</span>
-        </div>
-        <div class="proj-links-row">
-          <a href="https://github.com/techByMarcus/soc-analyst-portfolio" target="_blank" class="proj-link primary">GitHub →</a>
+        <div class="case-col">
+          <div class="case-block">
+            <h4>Why it matters</h4>
+            <p>This is not a generic lab. It is a security risk assessment of the precise environment I know at the operational level — which means the control gaps and regulatory mappings reflect how the work is actually done, not a textbook template.</p>
+          </div>
+          <div class="case-block">
+            <h4>Outcome</h4>
+            <p>A complete GRC deliverable: risk register, gap analysis, and remediation roadmap — published to GitHub as evidence of applied capability in financial-services risk.</p>
+          </div>
         </div>
       </div>
-
-      <div class="proj-card">
-        <div class="proj-type cyber">Cybersecurity</div>
-        <div class="proj-icon">📋</div>
-        <div class="proj-title">Real-World Log Investigation</div>
-        <div class="proj-desc">
-          Account compromise simulation — authentication log analysis,
-          attack timeline reconstruction, lateral movement identification,
-          and evidence-backed incident report.
+      <div class="case-foot">
+        <div class="stack">
+          <span class="chip">NIST CSF</span>
+          <span class="chip">Risk Register</span>
+          <span class="chip">Controls Gap Analysis</span>
+          <span class="chip">Remediation Roadmap</span>
+          <span class="chip">GLBA / RESPA / TILA / CFPB</span>
         </div>
-        <div class="proj-tags">
-          <span class="proj-tag">Log Analysis</span>
-          <span class="proj-tag">Timeline Reconstruction</span>
-          <span class="proj-tag">IOC Identification</span>
-          <span class="proj-tag">Report Writing</span>
-        </div>
-        <div class="proj-links-row">
-          <a href="https://github.com/techByMarcus/real-world-log-investigation" target="_blank" class="proj-link primary">GitHub →</a>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-type cyber">Cybersecurity</div>
-        <div class="proj-icon">🔧</div>
-        <div class="proj-title">Security Audit Lab</div>
-        <div class="proj-desc">
-          Windows and Linux virtual lab — host discovery with Nmap,
-          traffic analysis with Wireshark, vulnerability documentation,
-          and a custom system configuration audit tool.
-        </div>
-        <div class="proj-tags">
-          <span class="proj-tag">Nmap</span>
-          <span class="proj-tag">Wireshark</span>
-          <span class="proj-tag">Vulnerability Assessment</span>
-          <span class="proj-tag">Risk Documentation</span>
-        </div>
-        <div class="proj-links-row">
-          <a href="https://github.com/techByMarcus/security-audit-lab" target="_blank" class="proj-link primary">GitHub →</a>
-        </div>
-      </div>
-
-      <div class="proj-card secondary">
-        <div class="proj-type ops">Operations / CRM</div>
-        <div class="proj-icon">🏠</div>
-        <div class="proj-title">LoanFlow CRM</div>
-        <div class="proj-desc">
-          Full mortgage pipeline management system — 8-stage Kanban,
-          automation engine, audit log, and task manager.
-          Demonstrates workflow systems thinking and structured data tracking.
-        </div>
-        <div class="proj-tags">
-          <span class="proj-tag">Pipeline Management</span>
-          <span class="proj-tag">Automation Logic</span>
-          <span class="proj-tag">Audit Log</span>
-          <span class="proj-tag">React</span>
-        </div>
-        <div class="proj-links-row">
-          <a href="https://techByMarcus.github.io/ClientFlow-CRM-Demo" target="_blank" class="proj-link teal">Live Demo →</a>
-          <a href="https://github.com/techByMarcus/ClientFlow-CRM-Demo" target="_blank" class="proj-link outline">GitHub →</a>
-        </div>
+        <a class="case-link" href="https://github.com/techByMarcus/grc-risk-assessment-financial-services" target="_blank" rel="noopener">View on GitHub →</a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- ── SKILLS ── -->
-<section id="skills">
-  <div class="sec">
-    <div class="sec-label">Capabilities</div>
-    <div class="sec-title">What I Can Do</div>
-    <p class="sec-body">Cybersecurity skills built through labs and training. Operations skills built over 20+ years of real-world work.</p>
-
-    <div class="skills-cols">
-      <div class="skill-block">
-        <div class="sb-head">
-          <div class="sb-title-row">
-            <span class="sb-icon">🔒</span>
-            <span class="sb-title">Cybersecurity</span>
-          </div>
-          <span class="sb-badge cyber">Labs &amp; Training</span>
-        </div>
-        <div class="skill-rows">
-          <div class="sk">SOC alert triage &amp; incident investigation — 20+ cases on LetsDefend</div>
-          <div class="sk">Log analysis &amp; event correlation using Splunk (lab environments)</div>
-          <div class="sk">MITRE ATT&amp;CK framework — certified, applied in investigations</div>
-          <div class="sk">Cyber Kill Chain — certified</div>
-          <div class="sk">Phishing investigation &amp; email header analysis</div>
-          <div class="sk">Network scanning — Nmap, traffic analysis — Wireshark</div>
-          <div class="sk">Incident documentation &amp; structured findings reports</div>
-          <div class="sk">Windows environments, basic Linux, Active Directory (foundational)</div>
-          <div class="sk">EC-Council EHE and NDE lab environments</div>
-          <div class="sk">CompTIA Security+ — in progress</div>
+<!-- SUPPORTING WORK -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">03</span>
+      <h2 class="sec-title">Supporting work</h2>
+    </div>
+    <p class="prop-lead reveal" style="margin-bottom:48px">Hands-on technical investigations and labs — the proof behind the analyst skill set. <em>Documented, published, repeatable.</em></p>
+    <div class="grid-3 reveal">
+      <div class="card">
+        <div class="pn">SOC · Investigations</div>
+        <h3>SOC Incident Investigations</h3>
+        <p>20+ structured investigations across simulated enterprise environments — brute-force, phishing, suspicious authentication, and malware alerts. Each with alert triage, log correlation, MITRE ATT&amp;CK mapping, and a structured findings report.</p>
+        <div class="stack">
+          <span class="chip">LetsDefend</span>
+          <span class="chip">Splunk</span>
+          <span class="chip">MITRE ATT&amp;CK</span>
         </div>
       </div>
-
-      <div class="skill-block">
-        <div class="sb-head">
-          <div class="sb-title-row">
-            <span class="sb-icon">⚙️</span>
-            <span class="sb-title">Operations &amp; Systems</span>
-          </div>
-          <span class="sb-badge ops">20+ Years</span>
-        </div>
-        <div class="skill-rows">
-          <div class="sk ops-sk">Salesforce CRM — daily user, pipeline management, data integrity</div>
-          <div class="sk ops-sk">High-volume workflow execution &amp; SLA management</div>
-          <div class="sk ops-sk">Structured documentation &amp; audit-ready record keeping</div>
-          <div class="sk ops-sk">Cross-functional coordination across compliance and operations teams</div>
-          <div class="sk ops-sk">Team leadership — 40+ direct reports</div>
-          <div class="sk ops-sk">Performance coaching, KPI tracking, accountability systems</div>
-          <div class="sk ops-sk">Executive reporting &amp; operational visibility</div>
-          <div class="sk ops-sk">Process improvement &amp; SOP design</div>
-          <div class="sk ops-sk">MS Office — Excel, SharePoint, Outlook</div>
+      <div class="card">
+        <div class="pn">IR · Threat Hunt</div>
+        <h3>Incident Response &amp; Threat Hunt</h3>
+        <p>Attack-timeline construction, IOC extraction, root-cause analysis, and a full incident-response report with a remediation roadmap — built on Wazuh SIEM telemetry and VirusTotal enrichment.</p>
+        <div class="stack">
+          <span class="chip">Wazuh</span>
+          <span class="chip">VirusTotal</span>
+          <span class="chip">IOC Extraction</span>
         </div>
       </div>
+      <div class="card">
+        <div class="pn">SIEM · Network Forensics</div>
+        <h3>SIEM &amp; PCAP Forensics Lab</h3>
+        <p>Deployed Wazuh to analyze Windows and Linux logs for brute-force, privilege-escalation, and persistence indicators; used Wireshark to identify DNS tunneling, C2 beaconing, and malware traffic from packet captures.</p>
+        <div class="stack">
+          <span class="chip">Wireshark</span>
+          <span class="chip">Sysmon</span>
+          <span class="chip">Cyber Kill Chain</span>
+        </div>
+      </div>
+    </div>
+    <div class="metrics reveal">
+      <div class="metric"><div class="num">20+</div><div class="lbl">Years in regulated<br>financial services</div></div>
+      <div class="metric"><div class="num">20+</div><div class="lbl">SOC investigations<br>documented</div></div>
+      <div class="metric"><div class="num">25+</div><div class="lbl">CTF challenges<br>completed</div></div>
+      <div class="metric"><div class="num">2</div><div class="lbl">Frameworks in study<br>NIST CSF · ISO 27001</div></div>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- ── BACKGROUND ── -->
+<!-- BACKGROUND -->
 <section id="background">
-  <div class="sec">
-    <div class="sec-label">Professional Background</div>
-    <div class="sec-title">Why Operations Experience Matters in Security</div>
-    <p class="sec-body">
-      The discipline required in enterprise operations — documentation accuracy, escalation judgment,
-      SLA management, and structured reporting — translates directly to SOC work.
-    </p>
-
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">04</span>
+      <h2 class="sec-title">Background</h2>
+    </div>
     <div class="bg-grid">
-      <div>
-        <div class="bg-transfer">
-          <div class="bg-transfer-title">Transferable to Cybersecurity</div>
-          <div class="transfer-item">Structured documentation → Incident report writing</div>
-          <div class="transfer-item">Escalation discipline → Alert triage and escalation decisions</div>
-          <div class="transfer-item">SLA management → Response time adherence in SOC workflows</div>
-          <div class="transfer-item">Anomaly identification → Suspicious pattern recognition in logs</div>
-          <div class="transfer-item">Compliance mindset → Security policy and control awareness</div>
-          <div class="transfer-item">Workflow tracking → Open/closed ticket management</div>
-          <div class="transfer-item">Cross-functional coordination → Incident response team work</div>
+      <div class="bg-intro reveal">
+        <p class="prop-lead">Two decades operating where compliance failures carry real consequences.</p>
+        <p>I spent my career in residential mortgage lending and client operations — environments governed by federal regulation, examined by auditors, and accountable to strict service-level standards.</p>
+        <p>That work is the discipline GRC teams answer for every day: <b>safeguarding customer PII, maintaining audit-ready documentation, enforcing data-handling controls, and escalating risk before it becomes a finding.</b> I'm now applying that foundation directly to information security.</p>
+      </div>
+      <div class="timeline reveal">
+        <div class="job">
+          <div class="yr">October 2025 — Present</div>
+          <h4>Senior Loan Officer · Client Operations &amp; Compliance</h4>
+          <div class="org">The Loan Factory · Remote · NMLS #1503465</div>
+          <p>End-to-end client operations in a regulated residential-mortgage environment — compliance documentation, data integrity, PII safeguarding, and SLA performance across the loan lifecycle under RESPA, TILA, and CFPB requirements.</p>
+        </div>
+        <div class="job">
+          <div class="yr">2004 — 2025</div>
+          <h4>Branch Manager · Loan Originator · Client Operations</h4>
+          <div class="org">Multiple Financial Services Organizations — Residential Mortgage Lending</div>
+          <p>Two decades of branch leadership and regulated operations — accountable for compliance (TILA, RESPA, GLBA, ECOA), audit-ready files for examination and investor review, file-level risk assessment, and safeguarding customer financial data under GLBA Safeguards expectations.</p>
+        </div>
+        <div class="job">
+          <div class="yr">2025 — Present</div>
+          <h4>Cybersecurity Projects &amp; Applied Training</h4>
+          <div class="org">Self-Directed · Remote</div>
+          <p>Structured, hands-on development in GRC and security operations — building the Pinnacle GRC risk assessment, SOC investigations, IR and threat-hunt reports, and SIEM/network-forensics labs, all published to a public GitHub portfolio.</p>
         </div>
       </div>
+    </div>
 
-      <div class="bg-exp-list">
-        <div class="bg-exp">
-          <div class="bg-exp-top">
-            <div class="bg-exp-title">Client Operations Manager</div>
-            <div class="bg-exp-date">2024 – 2025</div>
-          </div>
-          <div class="bg-exp-org">Confidential Organization · Atlanta, GA · Remote</div>
-          <div class="bg-exp-note">
-            Managed 40–60+ concurrent accounts in Salesforce CRM — pipeline tracking,
-            data integrity, SLA enforcement, executive reporting, and cross-functional
-            workflow coordination.
-          </div>
-        </div>
-        <div class="bg-exp">
-          <div class="bg-exp-top">
-            <div class="bg-exp-title">Senior Loan Officer — Client Operations</div>
-            <div class="bg-exp-date">2004 – 2023</div>
-          </div>
-          <div class="bg-exp-org">Multiple Financial Services Organizations · United States</div>
-          <div class="bg-exp-note">
-            Daily Salesforce user across 19 years — pipeline lifecycle management,
-            compliance tracking, structured reporting, and cross-functional coordination
-            in regulated financial environments.
-          </div>
-        </div>
-        <div class="bg-exp">
-          <div class="bg-exp-top">
-            <div class="bg-exp-title">Branch Manager / Operations Leader</div>
-            <div class="bg-exp-date">1998 – 2004</div>
-          </div>
-          <div class="bg-exp-org">Consumer Direct Operations · Multiple Locations</div>
-          <div class="bg-exp-note">
-            Led 40+ direct reports across high-volume customer-facing operations.
-            Coaching, KPI management, SOP design, compliance enforcement, and
-            executive performance reporting.
-          </div>
-          <div class="bg-achievement">🏆 #1 of 400+ locations · 30%+ above performance goals</div>
-        </div>
-      </div>
+    <div class="sec-head reveal" style="margin-top:90px;margin-bottom:40px">
+      <span class="sec-num">05</span>
+      <h2 class="sec-title">Certifications</h2>
+    </div>
+    <div class="certs reveal">
+      <div class="cert"><div class="cn">Cybersecurity Bootcamp</div><div class="ci">University of Tennessee, Knoxville · 2025</div></div>
+      <div class="cert"><div class="cn">Risk Management &amp; Credit Principles</div><div class="ci">New York Institute of Finance</div></div>
+      <div class="cert"><div class="cn">CompTIA Security+ (SY0-701)</div><div class="ci">CompTIA</div><span class="badge">In Progress</span></div>
+      <div class="cert"><div class="cn">Network Defense Essentials (NDE)</div><div class="ci">EC-Council</div></div>
+      <div class="cert"><div class="cn">Ethical Hacking Essentials (EHE)</div><div class="ci">EC-Council</div></div>
+      <div class="cert"><div class="cn">Certified in Cybersecurity (CC)</div><div class="ci">ISC2</div><span class="badge">In Progress</span></div>
+      <div class="cert"><div class="cn">SOC Analyst Path · MITRE ATT&amp;CK · Cyber Kill Chain</div><div class="ci">LetsDefend</div></div>
+      <div class="cert"><div class="cn">Cloud Technical Essentials</div><div class="ci">Amazon Web Services</div></div>
+      <div class="cert"><div class="cn">IT Fundamentals (ITF+) · Technical Support</div><div class="ci">CompTIA · IBM</div></div>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- ── RESUME ── -->
-<section id="resume">
-  <div class="sec">
-    <div class="sec-label">Resume</div>
-    <div class="resume-box">
-      <div class="resume-left">
-        <h3>Marcus Albright — Resume</h3>
-        <p>
-          Two versions available: cybersecurity-focused (SOC Analyst, Security Analyst roles)
-          and operations-focused (CRM Ops, Sales Ops, Client Operations roles).
-          Both are honest, targeted, and ATS-optimized.
-        </p>
-      </div>
-      <div class="resume-links">
-        <a href="https://linkedin.com/in/marcus-a-69ab2989" target="_blank" class="btn btn-primary">View on LinkedIn</a>
-        <a href="https://github.com/techByMarcus" target="_blank" class="btn btn-ghost">GitHub Profile</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ── CERTS ── -->
-<section id="certs">
-  <div class="sec">
-    <div class="sec-label">Certifications &amp; Training</div>
-    <div class="sec-title">Credentials</div>
-    <div class="certs-grid" style="margin-top:32px">
-      <div class="cert">
-        <div class="cert-name">Ethical Hacking Essentials (EHE)</div>
-        <div class="cert-issuer">EC-Council</div>
-        <div class="cert-yr">2026</div>
-      </div>
-      <div class="cert">
-        <div class="cert-name">Network Defense Essentials (NDE)</div>
-        <div class="cert-issuer">EC-Council</div>
-        <div class="cert-yr">2025</div>
-      </div>
-      <div class="cert">
-        <div class="cert-name">SOC Member + MITRE ATT&amp;CK</div>
-        <div class="cert-issuer">LetsDefend</div>
-        <div class="cert-yr">2026</div>
-      </div>
-      <div class="cert">
-        <div class="cert-name">Cyber Kill Chain</div>
-        <div class="cert-issuer">LetsDefend</div>
-        <div class="cert-yr">2026</div>
-      </div>
-      <div class="cert">
-        <div class="cert-name">Cybersecurity Bootcamp</div>
-        <div class="cert-issuer">University of Tennessee</div>
-        <div class="cert-yr">2025</div>
-      </div>
-      <div class="cert">
-        <div class="cert-name">Risk Management &amp; Credit Principles</div>
-        <div class="cert-issuer">New York Institute of Finance</div>
-        <div class="cert-yr">2025</div>
-      </div>
-      <div class="cert">
-        <div class="cert-name">Cloud Technical Essentials</div>
-        <div class="cert-issuer">Amazon Web Services</div>
-        <div class="cert-yr">2025</div>
-      </div>
-      <div class="cert">
-        <div class="cert-name">Technical Support Basics</div>
-        <div class="cert-issuer">IBM</div>
-        <div class="cert-yr">2025</div>
-      </div>
-      <div class="cert">
-        <div class="cert-name">CompTIA Security+</div>
-        <div class="cert-issuer">CompTIA</div>
-        <div class="cert-yr prog">In Progress</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ── CONTACT ── -->
+<!-- CONTACT -->
 <section id="contact">
-  <div class="contact-name">Get In Touch</div>
-  <div class="contact-title">Open to SOC &amp; Security Roles</div>
-  <p class="contact-sub">
-    Available immediately. Remote preferred, open to hybrid in Atlanta, GA.
-    Targeting SOC Analyst, Security Analyst, and security operations roles.
-  </p>
-  <div class="contact-links">
-    <a href="https://linkedin.com/in/marcus-a-69ab2989" target="_blank" class="contact-link cl-li">💼 LinkedIn</a>
-    <a href="https://github.com/techByMarcus" target="_blank" class="contact-link cl-gh">🐙 GitHub</a>
-    <a href="mailto:marcus.albright@gmail.com" class="contact-link cl-em">✉️ marcus.albright@gmail.com</a>
+  <div class="wrap">
+    <div class="contact-inner">
+      <span class="mono reveal">Get in touch</span>
+      <h2 class="reveal">Let's talk about <em>risk, compliance, and security.</em></h2>
+      <p class="lede reveal">Targeting GRC, Risk Analyst, and Security Operations roles — remote or hybrid, based in Atlanta, GA.</p>
+      <div class="contact-row reveal">
+        <a href="mailto:marcus.albright@gmail.com" class="btn btn-primary">marcus.albright@gmail.com</a>
+        <a href="resume.pdf" class="btn btn-ghost" download>Download Résumé (PDF)</a>
+        <a href="https://www.linkedin.com/in/marcus-a-69ab2989" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+        <a href="https://github.com/techByMarcus" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+      </div>
+    </div>
   </div>
-  <p style="margin-top:28px;font-family:var(--mono);font-size:11px;color:var(--g500)">(702) 328-2272 &nbsp;·&nbsp; Atlanta, GA</p>
 </section>
 
 <footer>
-  <span>Marcus Albright · Cybersecurity &amp; Operations</span>
-  <span style="font-family:var(--mono)">github.com/techByMarcus</span>
+  <div class="wrap">
+    <p>© <span id="yr"></span> Marcus Albright · Atlanta, GA</p>
+    <p class="mono">Compliance · Risk · Cybersecurity</p>
+  </div>
 </footer>
 
+<script>
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i,4)*0.06)+'s';io.observe(el)});
+  addEventListener('scroll',()=>{const n=document.querySelector('nav');n.style.borderBottomColor=scrollY>20?'rgba(201,168,114,0.18)':'rgba(236,232,225,0.08)'});
+</script>
 </body>
 </html>
