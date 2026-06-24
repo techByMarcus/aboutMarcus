@@ -116,7 +116,7 @@
   .case-link:hover{gap:13px}
 
   /* SUPPORTING */
-  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .grid-3{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
   .card{background:var(--surface);border:1px solid var(--line-soft);border-radius:4px;padding:34px 30px;transition:.3s;display:flex;flex-direction:column}
   .card:hover{border-color:var(--line);transform:translateY(-3px)}
   .card .pn{font-family:var(--mono);font-size:12px;color:var(--gold);letter-spacing:.1em;margin-bottom:20px}
@@ -325,12 +325,13 @@
       <div class="card">
         <div class="pn">SOC · Investigations</div>
         <h3>SOC Incident Investigations</h3>
-        <p>20+ structured investigations across simulated enterprise environments — brute-force, phishing, suspicious authentication, and malware alerts. Each with alert triage, log correlation, MITRE ATT&amp;CK mapping, and a structured findings report.</p>
+        <p>3 structured investigations across simulated enterprise environments — brute-force, phishing, suspicious authentication, and malware alerts. Each with alert triage, log correlation, MITRE ATT&amp;CK mapping, and a structured findings report.</p>
         <div class="stack">
           <span class="chip">LetsDefend</span>
           <span class="chip">Splunk</span>
           <span class="chip">MITRE ATT&amp;CK</span>
         </div>
+        <a class="case-link" href="https://github.com/techByMarcus/soc-analyst-portfolio" target="_blank" rel="noopener" style="font-size:13px;color:var(--gold);display:inline-flex;gap:6px;align-items:center;margin-top:16px;transition:.2s">View on GitHub →</a>
       </div>
       <div class="card">
         <div class="pn">IR · Threat Hunt</div>
@@ -341,6 +342,7 @@
           <span class="chip">VirusTotal</span>
           <span class="chip">IOC Extraction</span>
         </div>
+        <a class="case-link" href="https://github.com/techByMarcus/real-world-log-investigation" target="_blank" rel="noopener" style="font-size:13px;color:var(--gold);display:inline-flex;gap:6px;align-items:center;margin-top:16px;transition:.2s">View on GitHub →</a>
       </div>
       <div class="card">
         <div class="pn">SIEM · Network Forensics</div>
@@ -351,11 +353,24 @@
           <span class="chip">Sysmon</span>
           <span class="chip">Cyber Kill Chain</span>
         </div>
+        <a class="case-link" href="https://github.com/techByMarcus/cybersecurity-labs-EhE-" target="_blank" rel="noopener" style="font-size:13px;color:var(--gold);display:inline-flex;gap:6px;align-items:center;margin-top:16px;transition:.2s">View on GitHub →</a>
+      </div>
+      <div class="card">
+        <div class="pn">Python · NIST CSF 2.0</div>
+        <h3>Security Audit Tool</h3>
+        <p>Read-only local system security audit written in Python. Maps 7 host checks to NIST CSF 2.0 subcategories, applies severity-weighted risk scoring, and emits findings as JSON, text, or HTML. Includes 16 automated tests and a GitHub Actions CI pipeline — green across Python 3.10–3.12.</p>
+        <div class="stack">
+          <span class="chip">Python</span>
+          <span class="chip">NIST CSF 2.0</span>
+          <span class="chip">pytest</span>
+          <span class="chip">GitHub Actions CI</span>
+        </div>
+        <a class="case-link" href="https://github.com/techByMarcus/security-audit-tool" target="_blank" rel="noopener" style="font-size:13px;color:var(--gold);display:inline-flex;gap:6px;align-items:center;margin-top:16px;transition:.2s">View on GitHub →</a>
       </div>
     </div>
     <div class="metrics reveal">
       <div class="metric"><div class="num">20+</div><div class="lbl">Years in regulated<br>financial services</div></div>
-      <div class="metric"><div class="num">20+</div><div class="lbl">SOC investigations<br>documented</div></div>
+      <div class="metric"><div class="num">3</div><div class="lbl">Documented SOC<br>investigations</div></div>
       <div class="metric"><div class="num">25+</div><div class="lbl">CTF challenges<br>completed</div></div>
       <div class="metric"><div class="num">2</div><div class="lbl">Frameworks in study<br>NIST CSF · ISO 27001</div></div>
     </div>
